@@ -18,12 +18,12 @@ jobs:
       run: |
         dir
         dotnet restore
-      working-directory: SevereWeatherWarnings
+      working-directory: SevereWeatherWarnings.Web
     - name: .NET Build
       run: |
         dir
         dotnet publish /p:Configuration=Release /p:EnvironmentName=Live
-      working-directory: SevereWeatherWarnings
+      working-directory: SevereWeatherWarnings.Web
     - name: FTP Deploy Files to Server
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
