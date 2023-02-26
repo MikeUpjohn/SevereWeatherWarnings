@@ -2,7 +2,7 @@ name: Severe Weather Warnings Map
 on:
   push:
     branches:
-      - test
+      - master
 jobs:
   build:
     runs-on: windows-latest
