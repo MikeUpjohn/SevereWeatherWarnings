@@ -1,0 +1,34 @@
+name: Mike Upjohn Test API
+on:
+  push:
+    branches:
+      - test
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.302'
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+    - name: NuGET Restore
+      run: |
+        dir
+        dotnet restore
+      working-directory: SevereWeatherWarnings
+    - name: .NET Build
+      run: |
+        dir
+        dotnet publish /p:Configuration=Release /p:EnvironmentName=Live
+      working-directory: SevereWeatherWarnings
+    - name: FTP Deploy Files to Server
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ${{secrets.SERVER_IP}}
+        username: ${{secrets.FTP_USERNAME}}
+        password: ${{secrets.FTP_PASSWORD}}
+        local-dir: ${{secrets.LOCAL_DIR}}
+        server-dir: ${{secrets.TEST_SERVER_DIR}}
