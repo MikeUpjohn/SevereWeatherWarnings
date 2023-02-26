@@ -1,4 +1,4 @@
-name: Mike Upjohn Test API
+name: Severe Weather Warnings Map
 on:
   push:
     branches:
