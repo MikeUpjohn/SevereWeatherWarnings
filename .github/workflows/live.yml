@@ -18,13 +18,13 @@ jobs:
       run: |
         dir
         dotnet restore
-      working-directory: SevereWeatherWarnings.Web
+      working-directory: SevereWeatherWarnings.Map
     - name: .NET Build
       run: |
         dir
         dotnet publish /p:Configuration=Release /p:EnvironmentName=Live
         ls
-      working-directory: SevereWeatherWarnings.Web
+      working-directory: SevereWeatherWarnings.Map
     - name: List Directory
       run: |
         cd SevereWeatherWarnings.Map
