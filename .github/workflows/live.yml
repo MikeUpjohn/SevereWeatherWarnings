@@ -23,6 +23,7 @@ jobs:
       run: |
         dir
         dotnet publish /p:Configuration=Release /p:EnvironmentName=Live
+        ls
       working-directory: SevereWeatherWarnings.Web
     - name: FTP Deploy Files to Server
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
