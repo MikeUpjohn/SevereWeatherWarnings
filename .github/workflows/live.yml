@@ -27,8 +27,10 @@ jobs:
       working-directory: SevereWeatherWarnings.Web
     - name: List Directory
       run: |
+        cd SevereWeatherWarnings.Map
+        cd bin
+        cd Release
         dir
-        ls
     - name: FTP Deploy Files to Server
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
