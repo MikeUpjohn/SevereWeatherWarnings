@@ -28,6 +28,7 @@ jobs:
     - name: List Directory
       run: |
         cd SevereWeatherWarnings.Map
+        cd bin
         dir
     - name: FTP Deploy Files to Server
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
