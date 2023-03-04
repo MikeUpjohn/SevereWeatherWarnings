@@ -4,11 +4,11 @@ using System.Diagnostics;
 
 namespace SevereWeatherWarnings.Map.Controllers
 {
-    public class HomeController : Controller
+    public class SevereWeatherMapController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<SevereWeatherMapController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public SevereWeatherMapController(ILogger<SevereWeatherMapController> logger)
         {
             _logger = logger;
         }
