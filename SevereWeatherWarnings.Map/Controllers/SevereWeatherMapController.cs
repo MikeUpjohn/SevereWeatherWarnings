@@ -7,14 +7,17 @@ namespace SevereWeatherWarnings.Map.Controllers
     public class SevereWeatherMapController : Controller
     {
         private readonly ILogger<SevereWeatherMapController> _logger;
+        private readonly IConfiguration _configuration;
 
-        public SevereWeatherMapController(ILogger<SevereWeatherMapController> logger)
+        public SevereWeatherMapController(ILogger<SevereWeatherMapController> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
         {
+            ViewData["MapBoxConnectionString"] = _configuration["Settings:MapBoxToken"];
             return View();
         }
 
