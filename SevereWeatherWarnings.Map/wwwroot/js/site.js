@@ -11,7 +11,7 @@ $(document).ready(function () {
     map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v12',
-        center: [-74.5, 40],
+        center: [- 97.043, 32.896],
         zoom: 9
     });
 });
