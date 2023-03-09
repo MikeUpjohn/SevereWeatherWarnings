@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SevereWeatherWarnings.Map", "SevereWeatherWarnings.Map\SevereWeatherWarnings.Map.csproj", "{FF494B01-A7AB-4247-9F3E-CF7463727DC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevereWeatherWarnings.Models", "SevereWeatherWarnings.Models\SevereWeatherWarnings.Models.csproj", "{7C771814-7F7D-40B4-B072-2B7E93105B8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SevereWeatherWarnings.Models", "SevereWeatherWarnings.Models\SevereWeatherWarnings.Models.csproj", "{7C771814-7F7D-40B4-B072-2B7E93105B8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevereWeatherWarnings.Library", "SevereWeatherWarnings.Library\SevereWeatherWarnings.Library.csproj", "{36864C37-CADD-4E89-BB4C-563B8B9C2803}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7C771814-7F7D-40B4-B072-2B7E93105B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C771814-7F7D-40B4-B072-2B7E93105B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C771814-7F7D-40B4-B072-2B7E93105B8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36864C37-CADD-4E89-BB4C-563B8B9C2803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36864C37-CADD-4E89-BB4C-563B8B9C2803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36864C37-CADD-4E89-BB4C-563B8B9C2803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36864C37-CADD-4E89-BB4C-563B8B9C2803}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
