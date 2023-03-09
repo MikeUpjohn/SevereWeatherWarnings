@@ -13,4 +13,8 @@
     <None Remove="Views\Home\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SevereWeatherWarnings.Models\SevereWeatherWarnings.Models.csproj" />
+  </ItemGroup>
+
 </Project>
