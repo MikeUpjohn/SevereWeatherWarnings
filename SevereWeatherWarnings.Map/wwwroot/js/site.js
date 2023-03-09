@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v12',
+        style: 'mapbox://styles/mikeupjohn/cleyos0o0000t01p9r4ovd33n',
         center: [- 97.043, 32.896],
         zoom: 9
     });
