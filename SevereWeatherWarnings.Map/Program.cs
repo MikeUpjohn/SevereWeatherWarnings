@@ -1,7 +1,15 @@
+using SevereWeatherWarnings.Library.UseCases.Warnings;
+using SevereWeatherWarnings.Library.UseCases.Warnings.Interfaces;
+using SevereWeatherWarnings.Library.Utilities;
+using SevereWeatherWarnings.Library.Utilities.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IGetWeatherWarnings, GetWeatherWarnings>();
+builder.Services.AddScoped<IWebServiceRetriever, WebServiceRetriever>();
 
 var app = builder.Build();
 

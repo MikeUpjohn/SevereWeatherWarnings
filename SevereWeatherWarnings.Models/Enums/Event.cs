@@ -1,8 +1,11 @@
-﻿namespace SevereWeatherWarnings.Models.Enums
+﻿using System.ComponentModel;
+
+namespace SevereWeatherWarnings.Models.Enums
 {
     public enum Event
     {
         FlashFloodStatement = 38,
+        [Description("Flash Flood Warning")]
         FlashFloodWarning = 39,
         FlashFloodWatch = 40,
         SevereThunderstormWarning = 90,

@@ -15,3 +15,13 @@ $(document).ready(function () {
         zoom: 9
     });
 });
+
+$('#flash-flood-warnings').click(function () {
+    var request = {
+        event: 'FlashFloodWarning'
+    };
+
+    $.post("/RetrieveData/GetData", request, function (data) {
+        console.log(data);
+    });
+});
