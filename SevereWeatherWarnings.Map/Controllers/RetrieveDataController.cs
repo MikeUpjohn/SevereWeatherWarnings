@@ -13,9 +13,9 @@ namespace SevereWeatherWarnings.Map.Controllers
             _getWeatherWarnings = getWeatherWarnings;
          }
 
-        public JsonResult GetData(RetrieveDataRequest request)
+        public async Task<JsonResult> GetData(RetrieveDataRequest request)
         {
-            _getWeatherWarnings.GetActiveWeatherWarnings(request);
+            await _getWeatherWarnings.GetActiveWeatherWarnings(request);
             return Json(new { });
         }
     }

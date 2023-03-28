@@ -1,24 +1,31 @@
 ﻿using SevereWeatherWarnings.Library.Utilities.Interfaces;
-using SevereWeatherWarnings.Models.API;
-using System.Net;
 using System.Net.Http.Headers;
 
 namespace SevereWeatherWarnings.Library.Utilities
 {
     public class WebServiceRetriever : IWebServiceRetriever
     {
-        public async Task<WeatherWarningsResponse> GetData(string url)
+        public async Task<string> GetData(string url)
         {
             var client = new HttpClient();
-            client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("confessions-of-a-storm-geek.co.uk", "michael.upjohn@hotmail.co.uk"));
-            HttpResponseMessage result = await client.GetAsync(url);
-
-            if(result.IsSuccessStatusCode)
+            var request = new HttpRequestMessage()
             {
-                var response = result.Content.ReadAsStringAsync();
-            }
+                RequestUri = new Uri(url),
+                Method = HttpMethod.Get
+            };
 
-            return new WeatherWarningsResponse();
+            request.Headers.UserAgent.Add(new ProductInfoHeaderValue("www.confessions-of-a-storm-geek.co.uk", "hello-at-mike-upjohn.co.uk"));
+
+            string jsonObject = "";
+            return await client.SendAsync(request)
+                .ContinueWith((result) =>
+                {
+                    var response = result.Result;
+                    var jsonResult = response.Content.ReadAsStringAsync();
+                    jsonResult.Wait();
+
+                    return jsonResult.Result;
+                });
         }
     }
 }

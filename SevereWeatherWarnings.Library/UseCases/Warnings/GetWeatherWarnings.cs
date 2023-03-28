@@ -1,4 +1,5 @@
-﻿using SevereWeatherWarnings.Library.Extensions;
+﻿using Newtonsoft.Json;
+using SevereWeatherWarnings.Library.Extensions;
 using SevereWeatherWarnings.Library.UseCases.Warnings.Interfaces;
 using SevereWeatherWarnings.Library.Utilities.Interfaces;
 using SevereWeatherWarnings.Models;
@@ -20,7 +21,7 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
             var apiUrl = GenerateAPIUrl(request);
             var response = await _webServiceRetriever.GetData(apiUrl);
 
-            return response;
+            return null;
         }
 
         private string GenerateAPIUrl(RetrieveDataRequest request)
