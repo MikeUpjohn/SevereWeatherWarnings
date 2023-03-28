@@ -9,10 +9,12 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
 {
     public class GetWeatherWarnings : IGetWeatherWarnings
     {
+        private readonly IMapWarnings _mapWarnings;
         private readonly IWebServiceRetriever _webServiceRetriever;
 
-        public GetWeatherWarnings(IWebServiceRetriever webServiceRetriever)
+        public GetWeatherWarnings(IMapWarnings mapWarnings, IWebServiceRetriever webServiceRetriever)
         {
+            _mapWarnings = mapWarnings;
             _webServiceRetriever = webServiceRetriever;
         }
 
@@ -20,8 +22,9 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
         {
             var apiUrl = GenerateAPIUrl(request);
             var response = await _webServiceRetriever.GetData(apiUrl);
+            var mappedResponse = _mapWarnings.Map(response);
 
-            return null;
+            return mappedResponse;
         }
 
         private string GenerateAPIUrl(RetrieveDataRequest request)

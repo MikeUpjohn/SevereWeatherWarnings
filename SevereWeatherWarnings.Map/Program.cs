@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IGetWeatherWarnings, GetWeatherWarnings>();
 builder.Services.AddScoped<IWebServiceRetriever, WebServiceRetriever>();
+builder.Services.AddScoped<IMapWarnings, MapWarnings>();
 
 var app = builder.Build();
 
