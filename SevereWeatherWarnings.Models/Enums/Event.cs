@@ -4,6 +4,8 @@ namespace SevereWeatherWarnings.Models.Enums
 {
     public enum Event
     {
+        [Description("Blowing Dust Warning")]
+        BlowingDustWarning = 1,
         FlashFloodStatement = 38,
         [Description("Flash Flood Warning")]
         FlashFloodWarning = 39,

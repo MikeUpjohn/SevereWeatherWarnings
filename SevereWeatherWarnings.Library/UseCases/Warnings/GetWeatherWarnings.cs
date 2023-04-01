@@ -22,15 +22,16 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
         {
             var apiUrl = GenerateAPIUrl(request);
             var response = await _webServiceRetriever.GetData(apiUrl);
-            var mappedResponse = _mapWarnings.Map(response);
+            var mappedResponse = _mapWarnings.Map(request, response);
 
             return mappedResponse;
         }
 
         private string GenerateAPIUrl(RetrieveDataRequest request)
         {
-            var baseUrl = "https://api.weather.gov/alerts/active?";
-            return baseUrl + "event=" + EnumExtensions.GetDescription(request.Event);
+            //var baseUrl = "https://api.weather.gov/alerts/active?";
+            //return baseUrl + "event=" + EnumExtensions.GetDescription(request.Event);
+            return "https://severeweathermap.confessions-of-a-storm-geek.co.uk/active-alerts.json";
         }
     }
 }
