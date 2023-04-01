@@ -6,10 +6,12 @@ namespace SevereWeatherWarnings.Models.API
     public class WeatherWarningsResponse
     {
         public AlertCollectionGeoJSONType Type { get; set; }
-        public IList<Features> Features { get; set; }
+
+        [JsonProperty("features")]
+        public IList<WeatherWarning> WeatherWarnings { get; set; }
     }
 
-    public class Features
+    public class WeatherWarning
     {
         [JsonProperty("id")]
         public string Id { get; set; }
@@ -18,7 +20,7 @@ namespace SevereWeatherWarnings.Models.API
         public GeoJsonFeatureType Type { get; set; }
 
         [JsonProperty("geometry")]
-        public Geometry Geometry { get; set; }
+        public Geometry WarningGeometry { get; set; }
 
         [JsonProperty("properties")]
         public WarningProperties WarningProperties { get; set; }
