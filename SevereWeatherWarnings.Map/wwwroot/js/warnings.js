@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 $('#flash-flood-warnings').click(function () {
     var request = {
-        event: 'FlashFloodWarning'
+        event: 'FloodWarning'
     };
 
     $.post("/RetrieveData/GetData", request, function (data) {

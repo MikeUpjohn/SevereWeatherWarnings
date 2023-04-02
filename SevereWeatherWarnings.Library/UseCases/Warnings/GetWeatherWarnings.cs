@@ -31,7 +31,7 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
         {
             //var baseUrl = "https://api.weather.gov/alerts/active?";
             //return baseUrl + "event=" + EnumExtensions.GetDescription(request.Event);
-            return "https://severeweathermap.confessions-of-a-storm-geek.co.uk/active-alerts.json";
+            return "https://severeweathermap.confessions-of-a-storm-geek.co.uk/flood-warning-alerts.json";
         }
     }
 }
