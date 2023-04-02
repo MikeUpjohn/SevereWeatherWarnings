@@ -12,6 +12,8 @@ namespace SevereWeatherWarnings.Models.Enums
         FlashFloodWarning = 39,
         [Description("Flash Flood Watch")]
         FlashFloodWatch = 40,
+        [Description("Flood Warning")]
+        FloodWarning = 43,
         [Description("Severe Thunderstorm Warning")]
         SevereThunderstormWarning = 90,
         [Description("Severe Thunderstorm Watch")]

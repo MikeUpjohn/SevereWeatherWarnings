@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="~/SevereWeatherWarnings.Map.styles.css" asp-append-version="true" />
 </head>
 <body>
+    @if((bool)ViewData["IsTestingMode"])
+    {
+        <div class="warning-banner"><b>NB: </b>Site is in testing mode. Warning data is not live.</div>
+    }
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">

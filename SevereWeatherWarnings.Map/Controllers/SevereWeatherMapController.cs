@@ -18,6 +18,8 @@ namespace SevereWeatherWarnings.Map.Controllers
         public IActionResult Index()
         {
             ViewData["MapBoxConnectionString"] = _configuration["Settings:MapBoxToken"];
+            ViewData["IsTestingMode"] = bool.Parse(_configuration["Settings:IsTestingMode"]);
+
             return View();
         }
 

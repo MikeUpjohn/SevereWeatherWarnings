@@ -29,9 +29,13 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
 
         private string GenerateAPIUrl(RetrieveDataRequest request)
         {
-            //var baseUrl = "https://api.weather.gov/alerts/active?";
-            //return baseUrl + "event=" + EnumExtensions.GetDescription(request.Event);
-            return "https://severeweathermap.confessions-of-a-storm-geek.co.uk/flood-warning-alerts.json";
+            if (!request.IsTestingMode)
+            {
+                var baseUrl = "https://api.weather.gov/alerts/active?";
+                return baseUrl + "event=" + EnumExtensions.GetDescription(request.Event);
+            }
+
+            return $"https://severeweathermap.confessions-of-a-storm-geek.co.uk/sample-alerts/sample-alerts-{request.Event}.json";
         }
     }
 }
