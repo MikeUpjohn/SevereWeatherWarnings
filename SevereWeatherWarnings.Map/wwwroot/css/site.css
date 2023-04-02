@@ -35,6 +35,21 @@ html {
     background-color: #FF3333;
     padding: 10px;
     text-align: center;
-    color:#FFFFFF;
+    color: #FFFFFF;
     text-shadow: 1px 1px 3px #000000;
 }
+
+.map-window {
+    position: relative;
+}
+
+    .map-window .warnings-window {
+        position: fixed;
+        right: 0px;
+        bottom:0px;
+        width:500px;
+        height:200px;
+        background-color:lightblue;
+        padding:5px;
+        border-right:10px;
+    }
