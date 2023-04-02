@@ -22,6 +22,46 @@ $('#flash-flood-warnings').click(function () {
     };
 
     $.post("/RetrieveData/GetData", request, function (data) {
-        console.log(data);
+        addWarningsToMap(data);
     });
 });
+
+function addWarningsToMap(data) {
+    $(data.weatherWarnings).each(function (index, item) {
+        console.log(item);
+        map.addSource(item.id, {
+            'type': 'geojson',
+            'data': {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Polygon',
+                    'coordinates': item.warningGeometry.coOrdinates
+                }
+            }
+        });
+
+        map.addLayer({
+            'id': item.id,
+            'type': 'fill',
+            'source': item.id,
+            'layout': {},
+            'paint': {
+                'fill-color': '#0080FF',
+                'fill-opacity': 0.5
+            }
+        });
+
+        map.addLayer({
+            'id': 'outline' + item.id,
+            'type': 'line',
+            'source': item.id,
+            'layout': {},
+            'paint': {
+                'line-color': '#000',
+                'line-width': 3
+            }
+        });
+
+        console.log('Added layer with id ' + item.id + ' to the map');
+    });
+}
