@@ -46,8 +46,8 @@ function addWarningsToMap(data) {
             'source': item.id,
             'layout': {},
             'paint': {
-                'fill-color': '#0080FF',
-                'fill-opacity': 0.5
+                'fill-color': '#00FF00',
+                'fill-opacity': 0.15
             }
         });
 
@@ -57,8 +57,8 @@ function addWarningsToMap(data) {
             'source': item.id,
             'layout': {},
             'paint': {
-                'line-color': '#000',
-                'line-width': 3
+                'line-color': '#00FF00',
+                'line-width': 2
             }
         });
 
