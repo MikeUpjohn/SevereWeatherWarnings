@@ -53,3 +53,7 @@ html {
         padding:5px;
         border-right:10px;
     }
+
+.tornado-emergency {
+    background-color:deeppink;
+}
