@@ -10,8 +10,14 @@ $(document).ready(function () {
 
     createMap(32.896, -97.043, 9);
 
-    $('#expand-arrow').click(function () {
-        $('#expand-warnings-selector').animate({ "left": "-250px" }, "slow");
+    $('.expand-arrow').click(function () {
+        if ($('.side-panel-container').hasClass('open')) {
+            $('.side-panel-container').removeClass('open');
+            $('.side-panel-container').animate({ "right": "-315px" }, "slow");
+        } else {
+            $('.side-panel-container').addClass('open');
+            $('.side-panel-container').animate({ "right": "0px" }, "slow");
+        }
     });
 });
 
