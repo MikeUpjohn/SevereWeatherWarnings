@@ -45,7 +45,7 @@ html {
 
     .map-window .side-panel-container {
         position: fixed;
-        right: 100px;
+        right: -315px;
         top: 175px;
         width: 350px;
         background-color: white;
