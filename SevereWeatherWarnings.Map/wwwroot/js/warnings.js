@@ -9,6 +9,10 @@ $(document).ready(function () {
     mapboxgl.accessToken = mapToken;
 
     createMap(32.896, -97.043, 9);
+
+    $('#expand-arrow').click(function () {
+        $('#expand-warnings-selector').animate({ "left": "-250px" }, "slow");
+    });
 });
 
 $('#flash-flood-warnings').click(function () {

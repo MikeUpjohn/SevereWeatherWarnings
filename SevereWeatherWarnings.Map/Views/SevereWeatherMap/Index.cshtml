@@ -3,6 +3,17 @@
 }
 
 <button id="flash-flood-warnings" style="background-color:greenyellow">Flood Warning</button>
-<div class="text-center">
-    <div id='map' data-accesstoken="@ViewData["MapBoxConnectionString"]"></div>
+<div class="map-window">
+    <div class="text-center">
+        <div id='map' data-accesstoken="@ViewData["MapBoxConnectionString"]"></div>
+    </div>
+
+    <div class="side-panel-container">
+        <div class="expand-arrow" id="expand-warnings-selector"><<</div>
+        <div class="side-panel">
+            <div class="selector-panel">
+                <div class="warning-selector-panel"></div>
+            </div>
+        </div>
+    </div>
 </div>
