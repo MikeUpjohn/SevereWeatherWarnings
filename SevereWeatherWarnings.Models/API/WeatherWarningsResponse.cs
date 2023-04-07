@@ -24,6 +24,8 @@ namespace SevereWeatherWarnings.Models.API
 
         [JsonProperty("properties")]
         public WarningProperties WarningProperties { get; set; }
+        
+        public DisplayProperties DisplayProperties { get; set; }
     }
 
     public class Geometry
@@ -95,5 +97,11 @@ namespace SevereWeatherWarnings.Models.API
 
         [JsonProperty("response")]
         public Response Response { get; set; }
+    }
+
+    public class DisplayProperties
+    {
+        public string FillColourHexCode { get; set; }
+        public string LineColourHexCode { get; set; }
     }
 }

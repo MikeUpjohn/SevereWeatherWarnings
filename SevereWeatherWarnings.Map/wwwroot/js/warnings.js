@@ -35,6 +35,16 @@ $('#flood-warnings').click(function () {
     });
 });
 
+$('#severe-thunderstorm-warnings').click(function () {
+    var request = {
+        event: 'SevereThunderstormWarning'
+    };
+
+    $.post("/RetrieveData/GetData", request, function (data) {
+        addWarningsToMap(data);
+    });
+});
+
 function addWarningsToMap(data) {
     $(data.weatherWarnings).each(function (index, item) {
         drawWarningPolygon(item);
@@ -43,6 +53,6 @@ function addWarningsToMap(data) {
 
 function drawWarningPolygon(dataItem) {
     addDataSourceToMap(dataItem.id, dataItem.warningGeometry.coOrdinates);
-    drawPolygon(dataItem.id, '#00FF00', 0.15);
-    drawPolygonBorder(dataItem.id, '#00FF00', 0.15);
+    drawPolygon(dataItem.id, dataItem.displayProperties.fillColourHexCode, 0.15);
+    drawPolygonBorder(dataItem.id, dataItem.displayProperties.lineColourHexCode, 0.15);
 }

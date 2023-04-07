@@ -3,7 +3,6 @@ using SevereWeatherWarnings.Library.Extensions;
 using SevereWeatherWarnings.Library.UseCases.Warnings.Interfaces;
 using SevereWeatherWarnings.Models;
 using SevereWeatherWarnings.Models.API;
-using SevereWeatherWarnings.Models.Enums;
 
 namespace SevereWeatherWarnings.Library.UseCases.Warnings
 {
@@ -15,18 +14,20 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
             {
                 var mappedWarnings = JsonConvert.DeserializeObject<WeatherWarningsResponse>(rawData);
 
-                // Mapping Custom Fields
-                foreach(var weatherWarning in mappedWarnings.WeatherWarnings)
+                if (mappedWarnings != null)
                 {
-                    weatherWarning.WarningProperties.EventType = EnumExtensions.GetEnumValueFromDescription<Event>(weatherWarning.WarningProperties.Event); 
+                    foreach (var weatherWarning in mappedWarnings.WeatherWarnings)
+                    {
+                        weatherWarning.WarningProperties.EventType = weatherWarning.GetEventFromEventDescription();
+                        weatherWarning.DisplayProperties = weatherWarning.GetWarningColours();
+                    }
                 }
 
-                return mappedWarnings;
+                return mappedWarnings ?? new WeatherWarningsResponse();
             }
             catch(Exception)
             {
-                int a = 1;
-                return null;
+                throw new Exception($"Error during mapping warning data.");
             }
         }
     }
