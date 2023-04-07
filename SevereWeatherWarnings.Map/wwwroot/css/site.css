@@ -39,40 +39,39 @@ html {
     text-shadow: 1px 1px 3px #000000;
 }
 
-.map-window {
-    position: relative;
+.side-panel-container {
+    position: fixed;
+    right: -315px;
+    top: 175px;
+    width: 350px;
+    border: 1px solid #000000;
+    border-radius: 10px 0px 0px 10px;
+    background-color: lightgray;
 }
 
-    .map-window .side-panel-container {
-        position: fixed;
-        right: -315px;
-        top: 175px;
-        width: 350px;
+    .side-panel-container h3 {
+        text-align:center;
     }
 
     .map-window .expand-arrow {
         position: relative;
-        left: 0px;
-        top: 0px;
         width: 35px;
-        height: 250px;
-        padding-top: 110px;
+        height: 350px;
+        padding-top: 160px;
         padding-left: 5px;
         font-weight: bold;
-        border-radius: 10px 0px 0px 10px;
-        border: 1px solid #000000;
-        background-color: lightgray;
-        border-right: none;
         float: left;
+        border-radius: 7px 0px 0px 7px;
+        background-color:#414141;
     }
 
-    .map-window .side-panel {
-        position: relative;
-        left: 35px;
-        width: 315px;
-        height: 250px;
-        display: block;
-        background-color: lightgray;
-        border: 1px solid #000000;
-        border-left:none;
-    }
+#expand-arrow-collapse {
+    display: none;
+}
+
+.map-window .side-panel {
+    position: relative;
+    left: 35px;
+    width: 315px;
+    height: 350px;
+}

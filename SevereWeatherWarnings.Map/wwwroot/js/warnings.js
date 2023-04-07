@@ -2,8 +2,6 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-//let map;
-
 $(document).ready(function () {
     var mapToken = $('#map').data('accesstoken');
     mapboxgl.accessToken = mapToken;
@@ -14,9 +12,13 @@ $(document).ready(function () {
         if ($('.side-panel-container').hasClass('open')) {
             $('.side-panel-container').removeClass('open');
             $('.side-panel-container').animate({ "right": "-315px" }, "slow");
+            $('#expand-arrow-expand').show();
+            $('#expand-arrow-collapse').hide();
         } else {
             $('.side-panel-container').addClass('open');
             $('.side-panel-container').animate({ "right": "0px" }, "slow");
+            $('#expand-arrow-expand').hide();
+            $('#expand-arrow-collapse').show();
         }
     });
 });
