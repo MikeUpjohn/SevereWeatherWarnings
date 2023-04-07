@@ -48,28 +48,31 @@ html {
         right: -315px;
         top: 175px;
         width: 350px;
-        background-color: white;
     }
 
     .map-window .expand-arrow {
         position: relative;
         left: 0px;
         top: 0px;
-        background-color: red;
         width: 35px;
         height: 250px;
         padding-top: 110px;
         padding-left: 5px;
         font-weight: bold;
         border-radius: 10px 0px 0px 10px;
-        float:left;
+        border: 1px solid #000000;
+        background-color: lightgray;
+        border-right: none;
+        float: left;
     }
 
     .map-window .side-panel {
         position: relative;
-        left:35px;
-        background-color:green;
-        width:315px;
-        height:250px;
-        display:block;
+        left: 35px;
+        width: 315px;
+        height: 250px;
+        display: block;
+        background-color: lightgray;
+        border: 1px solid #000000;
+        border-left:none;
     }

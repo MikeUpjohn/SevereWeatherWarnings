@@ -21,7 +21,7 @@ $(document).ready(function () {
     });
 });
 
-$('#flash-flood-warnings').click(function () {
+$('#flood-warnings').click(function () {
     var request = {
         event: 'FloodWarning'
     };
