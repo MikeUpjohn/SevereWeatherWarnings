@@ -47,6 +47,7 @@ html {
     border: 1px solid #000000;
     border-radius: 10px 0px 0px 10px;
     background-color: lightgray;
+    opacity:0.85;
 }
 
     .side-panel-container h3 {
@@ -60,6 +61,7 @@ html {
         padding-top: 160px;
         padding-left: 5px;
         font-weight: bold;
+        color:#FFFFFF;
         float: left;
         border-radius: 7px 0px 0px 7px;
         background-color:#414141;
