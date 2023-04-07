@@ -11,14 +11,16 @@ $(document).ready(function () {
     $('.expand-arrow').click(function () {
         if ($('.side-panel-container').hasClass('open')) {
             $('.side-panel-container').removeClass('open');
-            $('.side-panel-container').animate({ "right": "-315px" }, "slow");
-            $('#expand-arrow-expand').show();
-            $('#expand-arrow-collapse').hide();
+            $('.side-panel-container').animate({ "right": "-315px" }, "slow", function () {
+                $('#expand-arrow-expand').show();
+                $('#expand-arrow-collapse').hide();
+            });
         } else {
             $('.side-panel-container').addClass('open');
-            $('.side-panel-container').animate({ "right": "0px" }, "slow");
-            $('#expand-arrow-expand').hide();
-            $('#expand-arrow-collapse').show();
+            $('.side-panel-container').animate({ "right": "0px" }, "slow", function () {
+                $('#expand-arrow-expand').hide();
+                $('#expand-arrow-collapse').show();
+            });
         }
     });
 });
