@@ -53,6 +53,6 @@ function addWarningsToMap(data) {
 
 function drawWarningPolygon(dataItem) {
     addDataSourceToMap(dataItem.id, dataItem.warningGeometry.coOrdinates);
-    drawPolygon(dataItem.id, dataItem.displayProperties.fillColourHexCode, 0.15);
-    drawPolygonBorder(dataItem.id, dataItem.displayProperties.lineColourHexCode, 0.15);
+    drawPolygon(dataItem.id, dataItem.displayProperties.fillColourHexCode, 0.3);
+    drawPolygonBorder(dataItem.id, dataItem.displayProperties.lineColourHexCode, 0.3);
 }
