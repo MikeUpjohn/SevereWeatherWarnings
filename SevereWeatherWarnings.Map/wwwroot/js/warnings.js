@@ -45,6 +45,23 @@ $('#severe-thunderstorm-warnings').click(function () {
     });
 });
 
+$('#get-warning-data').click(function () {
+    let selectedItemsList = [];
+    $('input:checkbox[name=warning-selection]:checked').each(function (index, item) {
+        selectedItemsList.push($(item).val());
+    });
+
+    if (selectedItemsList.length) {
+        let request = {
+            event: selectedItemsList
+        };
+
+        $.post("/RetrieveData/GetData", request, function (data) {
+            addWarningsToMap(data);
+        });
+    }
+});
+
 function addWarningsToMap(data) {
     $(data.weatherWarnings).each(function (index, item) {
         drawWarningPolygon(item);

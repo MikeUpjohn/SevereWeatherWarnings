@@ -32,10 +32,11 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
             if (!request.IsTestingMode)
             {
                 var baseUrl = "https://api.weather.gov/alerts/active?";
-                return baseUrl + "event=" + EnumExtensions.GetDescription(request.Event);
+                return baseUrl + "event=" + string.Join(",", request.Event.Select(s => EnumExtensions.GetDescription(s.Value)));
             }
 
-            return $"https://severeweathermap.confessions-of-a-storm-geek.co.uk/sample-alerts/sample-alerts-{request.Event}.json";
+            var testBaseUrl = $"https://severeweathermap.confessions-of-a-storm-geek.co.uk/sample-alerts/sample-alerts-";
+            return testBaseUrl += request.Event.Count() == 1 ? $"{EnumExtensions.GetDescription(request.Event.FirstOrDefault())}.json" : "all.json";
         }
     }
 }
