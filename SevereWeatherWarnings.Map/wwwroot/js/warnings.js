@@ -25,26 +25,6 @@ $(document).ready(function () {
     });
 });
 
-$('#flood-warnings').click(function () {
-    var request = {
-        event: 'FloodWarning'
-    };
-
-    $.post("/RetrieveData/GetData", request, function (data) {
-        addWarningsToMap(data);
-    });
-});
-
-$('#severe-thunderstorm-warnings').click(function () {
-    var request = {
-        event: 'SevereThunderstormWarning'
-    };
-
-    $.post("/RetrieveData/GetData", request, function (data) {
-        addWarningsToMap(data);
-    });
-});
-
 $('#get-warning-data').click(function () {
     let selectedItemsList = [];
     $('input:checkbox[name=warning-selection]:checked').each(function (index, item) {
