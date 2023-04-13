@@ -68,6 +68,26 @@ html {
         background-color:#414141;
     }
 
+.selector-panel .button {
+    position:absolute;
+    bottom:20px;
+    left:120px
+}
+
+.selector-panel .button button {
+    border:1px solid black;
+    padding: 5px 10px 5px 10px;
+    border-radius:5px;
+}
+
+.selector-panel .button button:hover {
+    background-color:#828282;
+}
+
+.selector-panel label {
+    text-shadow: 1px 1px 5px #414141;
+}
+
 #expand-arrow-collapse {
     display: none;
 }
