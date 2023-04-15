@@ -1,4 +1,9 @@
-﻿$(document).ready(function () {
+﻿let prevSources = [];
+let newSources = [];
+let sourcesToAdd = [];
+let sourcesToDelete = [];
+
+$(document).ready(function () {
     var mapToken = $('#map').data('accesstoken');
     mapboxgl.accessToken = mapToken;
 
@@ -33,15 +38,46 @@ $('#get-warning-data').click(function () {
             event: selectedItemsList
         };
 
+        prevSources = newSources;
+        newSources = [];
+
         $.post("/RetrieveData/GetData", request, function (data) {
-            clearMap();
-            addWarningsToMap(data);
+            mapNewData(data);
+
+            let existsInNewSourceData = false;
+            $(newSources).each(function (index, newElement) {
+                $(prevSources).each(function (index, prevElement) {
+                    if (newElement.id == prevElement.id) {
+                        existsInNewSourceData = true;
+                    }
+                });
+
+                if (!existsInNewSourceData) {
+                    sourcesToAdd.push(newElement);
+                }
+            });
+
+            let existsInOldSourceData = false;
+            $(prevSources).each(function(index, prevElement) {
+                $(newSources).each(function (index, newElement) {
+                    if (prevElement.id == newElement.id) {
+                        existsInOldSourceData = true;
+                    }
+                });
+
+                if (!existsInOldSourceData) {
+                    sourcesToDelete.push(prevElement);
+                }
+            });
+
+            clearMap(sourcesToDelete);
+            addWarningsToMap(sourcesToAdd);
         });
     }
 });
 
 function addWarningsToMap(data) {
-    $(data.weatherWarnings).each(function (index, item) {
+    $(data).each(function (index, item) {
         drawWarningPolygon(item);
     });
 }
@@ -50,4 +86,10 @@ function drawWarningPolygon(dataItem) {
     addDataSourceToMap(dataItem.id, dataItem.warningGeometry.coOrdinates);
     drawPolygon(dataItem.id, dataItem.displayProperties.fillColourHexCode, 0.3);
     drawPolygonBorder(dataItem.id, dataItem.displayProperties.lineColourHexCode, 0.3);
+}
+
+function mapNewData(data) {
+    $(data.weatherWarnings).each(function (index, item) {
+        newSources.push(item);
+    });
 }
