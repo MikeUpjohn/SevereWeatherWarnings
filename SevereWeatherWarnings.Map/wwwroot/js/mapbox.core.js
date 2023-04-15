@@ -1,6 +1,9 @@
 ﻿let map;
 const mapStyle = 'mapbox://styles/mikeupjohn/cleyos0o0000t01p9r4ovd33n';
 
+let mapSources = [];
+let mapLayers = [];
+
 function createMap(latitude, longitude, zoom) {
     if (map === undefined) {
         map = new mapboxgl.Map({
@@ -13,7 +16,7 @@ function createMap(latitude, longitude, zoom) {
 }
 
 function addDataSourceToMap(id, coOrdinateList) {
-    console.log(coOrdinateList);
+    mapSources.push(id);
     map.addSource(id, {
         'type': 'geojson',
         'data': {
@@ -27,6 +30,7 @@ function addDataSourceToMap(id, coOrdinateList) {
 }
 
 function drawPolygon(id, fillColourHex, fillOpacity) {
+    mapLayers.push(id);
     map.addLayer({
         'id': id,
         'type': 'fill',
@@ -40,8 +44,11 @@ function drawPolygon(id, fillColourHex, fillOpacity) {
 }
 
 function drawPolygonBorder(id, lineColourHex, lineThickness) {
+    const polygonId = 'outline-' + id
+    mapLayers.push(polygonId);
+
     map.addLayer({
-        'id': 'outline' + id,
+        'id': polygonId,
         'type': 'line',
         'source': id,
         'layout': {},
@@ -50,4 +57,25 @@ function drawPolygonBorder(id, lineColourHex, lineThickness) {
             'line-width': lineThickness
         }
     });
+}
+
+function clearMap() {
+    $(mapLayers).each(function (index, element) {
+        removeLayer(element);
+    });
+
+    $(mapSources).each(function (index, element) {
+        removeSource(element);
+    });
+
+    mapLayers = [];
+    mapSources = [];
+}
+
+function removeLayer(id) {
+    map.removeLayer(id);
+}
+
+function removeSource(id) {
+    map.removeSource(id);
 }

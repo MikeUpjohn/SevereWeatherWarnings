@@ -1,8 +1,4 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-$(document).ready(function () {
+﻿$(document).ready(function () {
     var mapToken = $('#map').data('accesstoken');
     mapboxgl.accessToken = mapToken;
 
@@ -27,6 +23,7 @@ $(document).ready(function () {
 
 $('#get-warning-data').click(function () {
     let selectedItemsList = [];
+
     $('input:checkbox[name=warning-selection]:checked').each(function (index, item) {
         selectedItemsList.push($(item).val());
     });
@@ -37,6 +34,7 @@ $('#get-warning-data').click(function () {
         };
 
         $.post("/RetrieveData/GetData", request, function (data) {
+            clearMap();
             addWarningsToMap(data);
         });
     }
