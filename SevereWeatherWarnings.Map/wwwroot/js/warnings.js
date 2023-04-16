@@ -46,6 +46,8 @@ $('#get-warning-data').click(function () {
         $.post("/RetrieveData/GetData", request, function (data) {
             mapNewData(data);
 
+            console.log("Warning Count: " + newSources.length);
+
             let existsInNewSourceData;
             $(newSources).each(function (index, newElement) {
                 existsInNewSourceData = false;
@@ -82,14 +84,12 @@ $('#get-warning-data').click(function () {
 
 function addWarningsToMap(sourcesToAdd) {
     $(sourcesToAdd).each(function (index, element) {
-        console.log("Adding: " + element.id);
         drawWarningPolygon(element);
     });
 }
 
 function removeWarningsFromMap(sourcesToDelete) {
     $(sourcesToDelete).each(function (index, element) {
-        console.log("Deleting: " + element.id);
         removeLayer("outline-" + element.id);
         removeLayer(element.id);
         removeSource(element.id);
