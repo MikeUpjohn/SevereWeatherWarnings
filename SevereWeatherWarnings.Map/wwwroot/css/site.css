@@ -100,8 +100,7 @@ html {
 }
 
 .warning-popup {
-    background-color:lightgray;
-    max-width:250px;
+    max-width:300px;
 }
 
 .warning-popup h2 {

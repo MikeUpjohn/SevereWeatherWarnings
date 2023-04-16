@@ -32,7 +32,9 @@ function addDataSourceToMap(dataItem) {
                 'description': dataItem.warningProperties.description,
                 'instruction': dataItem.warningProperties.instruction,
                 'expiryDate': dataItem.warningProperties.expiryDate,
-                'areaDescription': dataItem.warningProperties.areaDescription
+                'areaDescription': dataItem.warningProperties.areaDescription,
+                'fillColour': dataItem.displayProperties.fillColourHexCode,
+                'lineColour': dataItem.displayProperties.lineColourHexCode
             }
         }
     });
@@ -49,6 +51,8 @@ function addDataSourceToMap(dataItem) {
             .setLngLat(e.lngLat)
             .setHTML($('#warning-container').html())
             .addTo(map);
+
+        $('.mapboxgl-popup-content').css('background-color', mapSourceProperties.fillColour).css('border', '1px solid ' + mapSourceProperties.lineColour);
     });
 }
 
