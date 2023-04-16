@@ -59,13 +59,6 @@ function drawPolygonBorder(id, lineColourHex, lineThickness) {
     });
 }
 
-function clearMap(sourcesToDelete) {
-    $(sourcesToDelete).each(function (index, element) {
-        removeLayer(element.id);
-        removeSource(element.id);
-    });
-}
-
 function removeLayer(id) {
     map.removeLayer(id);
 }

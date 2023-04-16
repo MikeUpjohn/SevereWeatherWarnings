@@ -40,12 +40,15 @@ $('#get-warning-data').click(function () {
 
         prevSources = newSources;
         newSources = [];
+        sourcesToAdd = [];
+        sourcesToDelete = [];
 
         $.post("/RetrieveData/GetData", request, function (data) {
             mapNewData(data);
 
-            let existsInNewSourceData = false;
+            let existsInNewSourceData;
             $(newSources).each(function (index, newElement) {
+                existsInNewSourceData = false;
                 $(prevSources).each(function (index, prevElement) {
                     if (newElement.id == prevElement.id) {
                         existsInNewSourceData = true;
@@ -57,8 +60,9 @@ $('#get-warning-data').click(function () {
                 }
             });
 
-            let existsInOldSourceData = false;
-            $(prevSources).each(function(index, prevElement) {
+            let existsInOldSourceData;
+            $(prevSources).each(function (index, prevElement) {
+                existsInOldSourceData = false;
                 $(newSources).each(function (index, newElement) {
                     if (prevElement.id == newElement.id) {
                         existsInOldSourceData = true;
@@ -70,15 +74,25 @@ $('#get-warning-data').click(function () {
                 }
             });
 
-            clearMap(sourcesToDelete);
+            removeWarningsFromMap(sourcesToDelete);
             addWarningsToMap(sourcesToAdd);
         });
     }
 });
 
-function addWarningsToMap(data) {
-    $(data).each(function (index, item) {
-        drawWarningPolygon(item);
+function addWarningsToMap(sourcesToAdd) {
+    $(sourcesToAdd).each(function (index, element) {
+        console.log("Adding: " + element.id);
+        drawWarningPolygon(element);
+    });
+}
+
+function removeWarningsFromMap(sourcesToDelete) {
+    $(sourcesToDelete).each(function (index, element) {
+        console.log("Deleting: " + element.id);
+        removeLayer("outline-" + element.id);
+        removeLayer(element.id);
+        removeSource(element.id);
     });
 }
 
