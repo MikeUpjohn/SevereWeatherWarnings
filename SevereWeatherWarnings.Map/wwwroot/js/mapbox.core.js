@@ -15,17 +15,40 @@ function createMap(latitude, longitude, zoom) {
     }
 }
 
-function addDataSourceToMap(id, coOrdinateList) {
-    mapSources.push(id);
-    map.addSource(id, {
+function addDataSourceToMap(dataItem) {
+    mapSources.push(dataItem.id);
+    console.log(dataItem);
+    map.addSource(dataItem.id, {
         'type': 'geojson',
         'data': {
             'type': 'Feature',
             'geometry': {
                 'type': 'Polygon',
-                'coordinates': coOrdinateList
+                'coordinates': dataItem.warningGeometry.coOrdinates
+            },
+            'properties': {
+                'event': dataItem.warningProperties.event,
+                'headline': dataItem.warningProperties.headline,
+                'description': dataItem.warningProperties.description,
+                'instruction': dataItem.warningProperties.instruction,
+                'expiryDate': dataItem.warningProperties.expiryDate,
+                'areaDescription': dataItem.warningProperties.areaDescription
             }
         }
+    });
+
+    map.on('click', dataItem.id, (e) => {
+        var mapSourceProperties = e.features[0].properties;
+
+        $('#warning-title').html(mapSourceProperties.event);
+        $('#headline').html(mapSourceProperties.headline);
+        $('#expiryDate').html(mapSourceProperties.expiryDate);
+        $('#areaDescription').html(mapSourceProperties.areaDescription);
+
+        new mapboxgl.Popup({ closeButton: false })
+            .setLngLat(e.lngLat)
+            .setHTML($('#warning-container').html())
+            .addTo(map);
     });
 }
 

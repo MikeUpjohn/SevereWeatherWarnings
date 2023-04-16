@@ -88,18 +88,18 @@ function addWarningsToMap(sourcesToAdd) {
     });
 }
 
+function drawWarningPolygon(dataItem) {
+    addDataSourceToMap(dataItem);
+    drawPolygon(dataItem.id, dataItem.displayProperties.fillColourHexCode, 0.3);
+    drawPolygonBorder(dataItem.id, dataItem.displayProperties.lineColourHexCode, 0.3);
+}
+
 function removeWarningsFromMap(sourcesToDelete) {
     $(sourcesToDelete).each(function (index, element) {
         removeLayer("outline-" + element.id);
         removeLayer(element.id);
         removeSource(element.id);
     });
-}
-
-function drawWarningPolygon(dataItem) {
-    addDataSourceToMap(dataItem.id, dataItem.warningGeometry.coOrdinates);
-    drawPolygon(dataItem.id, dataItem.displayProperties.fillColourHexCode, 0.3);
-    drawPolygonBorder(dataItem.id, dataItem.displayProperties.lineColourHexCode, 0.3);
 }
 
 function mapNewData(data) {
