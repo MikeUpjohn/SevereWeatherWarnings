@@ -52,16 +52,16 @@ namespace SevereWeatherWarnings.Models.API
         public string AreaDescription { get; set; }
 
         [JsonProperty("sent")]
-        public DateTime? SentDate { get; set; }
+        public DateTimeOffset? SentDate { get; set; }
 
         [JsonProperty("effective")]
-        public DateTime? EffectiveDate { get; set; }
+        public DateTimeOffset? EffectiveDate { get; set; }
 
         [JsonProperty("onset")]
-        public DateTime? OnsetDate { get; set; }
+        public DateTimeOffset? OnsetDate { get; set; }
 
         [JsonProperty("expires")]
-        public DateTime? ExpiryDate { get; set; }
+        public DateTimeOffset? ExpiryDate { get; set; }
 
         [JsonProperty("status")]
         public AlertStatus AlertStatus { get; set; }

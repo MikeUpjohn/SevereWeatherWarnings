@@ -12,7 +12,7 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
         {
             try
             {
-                var mappedWarnings = JsonConvert.DeserializeObject<WeatherWarningsResponse>(rawData);
+                var mappedWarnings = JsonConvert.DeserializeObject<WeatherWarningsResponse>(rawData,new JsonSerializerSettings() { DateFormatHandling= DateFormatHandling.IsoDateFormat, DateTimeZoneHandling = DateTimeZoneHandling.Local, DateParseHandling = DateParseHandling.DateTimeOffset });
 
                 if (mappedWarnings != null)
                 {
