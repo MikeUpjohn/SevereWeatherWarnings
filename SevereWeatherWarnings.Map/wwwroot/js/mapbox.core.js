@@ -53,6 +53,7 @@ function addDataSourceToMap(dataItem) {
             .addTo(map);
 
         $('.mapboxgl-popup-content').css('background-color', mapSourceProperties.fillColour).css('border', '1px solid ' + mapSourceProperties.lineColour);
+        $('.mapboxgl-popup-tip').css('border-bottom-color', mapSourceProperties.fillColour).css('border-top-color', mapSourceProperties.fillColour);
     });
 }
 
