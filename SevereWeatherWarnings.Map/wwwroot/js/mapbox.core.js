@@ -47,7 +47,7 @@ function addDataSourceToMap(dataItem) {
         $('#expiryDate').html(mapSourceProperties.expiryDate);
         $('#areaDescription').html(mapSourceProperties.areaDescription);
 
-        new mapboxgl.Popup({ closeButton: false })
+        new mapboxgl.Popup({ closeButton: false, maxWidth: '400px' })
             .setLngLat(e.lngLat)
             .setHTML($('#warning-container').html())
             .addTo(map);
