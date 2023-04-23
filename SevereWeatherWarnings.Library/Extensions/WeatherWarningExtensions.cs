@@ -31,7 +31,7 @@ namespace SevereWeatherWarnings.Library.Extensions
                 case Event.SevereWeatherStatement:
                     break;
                 case Event.TornadoWarning:
-                    break;
+                    return "#FF0000";
                 case Event.TornadoWatch:
                     break;
             }
