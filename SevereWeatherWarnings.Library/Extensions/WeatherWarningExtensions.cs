@@ -10,10 +10,8 @@ namespace SevereWeatherWarnings.Library.Extensions
             return EnumExtensions.GetEnumValueFromDescription<Event>(weatherWarning.WarningProperties.Event);
         }
 
-        public static DisplayProperties GetWarningColours(this WeatherWarning weatherWarning)
+        public static string GetWarningColours(this WeatherWarning weatherWarning)
         {
-            var displayProperties = new DisplayProperties();
-
             switch (weatherWarning.WarningProperties.EventType)
             {
                 case Event.BlowingDustWarning:
@@ -25,13 +23,9 @@ namespace SevereWeatherWarnings.Library.Extensions
                 case Event.FlashFloodWatch:
                     break;
                 case Event.FloodWarning:
-                    displayProperties.FillColourHexCode = "#00FF00";
-                    displayProperties.LineColourHexCode = "#00FF00";
-                    break;
+                    return "#00FF00";
                 case Event.SevereThunderstormWarning:
-                    displayProperties.FillColourHexCode = "#FFA500";
-                    displayProperties.LineColourHexCode = "#FFA500";
-                    break;
+                    return "#FFA500";
                 case Event.SevereThunderstormWatch:
                     break;
                 case Event.SevereWeatherStatement:
@@ -40,10 +34,9 @@ namespace SevereWeatherWarnings.Library.Extensions
                     break;
                 case Event.TornadoWatch:
                     break;
-                    
             }
 
-            return displayProperties;
+            return "";
         }
     }
 }

@@ -2,6 +2,8 @@ using SevereWeatherWarnings.Library.UseCases.Warnings;
 using SevereWeatherWarnings.Library.UseCases.Warnings.Interfaces;
 using SevereWeatherWarnings.Library.Utilities;
 using SevereWeatherWarnings.Library.Utilities.Interfaces;
+using SevereWeatherWarnings.Map.Presenters;
+using SevereWeatherWarnings.Map.Presenters.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IGetWeatherWarnings, GetWeatherWarnings>();
 builder.Services.AddScoped<IWebServiceRetriever, WebServiceRetriever>();
 builder.Services.AddScoped<IMapWarnings, MapWarnings>();
+builder.Services.AddScoped<IMapWarningDataPresenter, MapWarningDataPresenter>();
 
 var app = builder.Build();
 

@@ -31,7 +31,7 @@ function addDataSourceToMap(dataItem) {
                 'headline': dataItem.warningProperties.headline,
                 'description': dataItem.warningProperties.description,
                 'instruction': dataItem.warningProperties.instruction,
-                'expiryDate': dataItem.warningProperties.expiryDate,
+                'expiryDate': dataItem.warningProperties.expiryDate.formattedDate,
                 'areaDescription': dataItem.warningProperties.areaDescription,
                 'fillColour': dataItem.displayProperties.fillColourHexCode,
                 'lineColour': dataItem.displayProperties.lineColourHexCode

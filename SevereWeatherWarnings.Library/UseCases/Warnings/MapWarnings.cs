@@ -12,15 +12,11 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
         {
             try
             {
-                var mappedWarnings = JsonConvert.DeserializeObject<WeatherWarningsResponse>(rawData,new JsonSerializerSettings() { DateFormatHandling= DateFormatHandling.IsoDateFormat, DateTimeZoneHandling = DateTimeZoneHandling.Local, DateParseHandling = DateParseHandling.DateTimeOffset });
+                var mappedWarnings = JsonConvert.DeserializeObject<WeatherWarningsResponse>(rawData);
 
-                if (mappedWarnings != null)
+                foreach(var weatherWarning in mappedWarnings.WeatherWarnings)
                 {
-                    foreach (var weatherWarning in mappedWarnings.WeatherWarnings)
-                    {
-                        weatherWarning.WarningProperties.EventType = weatherWarning.GetEventFromEventDescription();
-                        weatherWarning.DisplayProperties = weatherWarning.GetWarningColours();
-                    }
+                    weatherWarning.WarningProperties.EventType = weatherWarning.GetEventFromEventDescription();
                 }
 
                 return mappedWarnings ?? new WeatherWarningsResponse();
