@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "YouTubeSansBlack";
+    src: url("../fonts/YouTubeSansBlack.otf");
+}
+
+@font-face {
+    font-family: "YouTubeSansBold";
+    src: url("../fonts/YouTubeSansBold.otf");
+}
+
+@font-face {
+    font-family: "YouTubeSansRegular";
+    src: url("../fonts/YouTubeSansRegular.otf");
+}
+
 html {
     font-size: 14px;
 }
@@ -47,42 +62,42 @@ html {
     border: 1px solid #000000;
     border-radius: 10px 0px 0px 10px;
     background-color: lightgray;
-    opacity:0.85;
+    opacity: 0.85;
 }
 
     .side-panel-container h3 {
-        text-align:center;
-        margin-top:5px;
+        text-align: center;
+        margin-top: 5px;
     }
 
-    .map-window .expand-arrow {
-        position: relative;
-        width: 35px;
-        height: 355px;
-        padding-top: 160px;
-        padding-left: 5px;
-        font-weight: bold;
-        color:#FFFFFF;
-        float: left;
-        border-radius: 7px 0px 0px 7px;
-        background-color:#414141;
-    }
+.map-window .expand-arrow {
+    position: relative;
+    width: 35px;
+    height: 355px;
+    padding-top: 160px;
+    padding-left: 5px;
+    font-weight: bold;
+    color: #FFFFFF;
+    float: left;
+    border-radius: 7px 0px 0px 7px;
+    background-color: #414141;
+}
 
 .selector-panel .button {
-    position:absolute;
-    bottom:20px;
-    left:120px
+    position: absolute;
+    bottom: 20px;
+    left: 120px
 }
 
-.selector-panel .button button {
-    border:1px solid black;
-    padding: 5px 10px 5px 10px;
-    border-radius:5px;
-}
+    .selector-panel .button button {
+        border: 1px solid black;
+        padding: 5px 10px 5px 10px;
+        border-radius: 5px;
+    }
 
-.selector-panel .button button:hover {
-    background-color:#828282;
-}
+        .selector-panel .button button:hover {
+            background-color: #828282;
+        }
 
 .selector-panel label {
     text-shadow: 1px 1px 5px #414141;
@@ -100,14 +115,18 @@ html {
 }
 
 .warning-popup h2 {
-    font-size:1.5em;
-    font-weight:bold;
+    font-family: YouTubeSansBold;
+    font-size: 2.0em;
+    font-weight: bold;
+    text-shadow: 1px 1px 9px #484848;
 }
 
 .warning-popup h3 {
-    font-size:1.2em;
+    font-family: YouTubeSansRegular;
+    font-size: 1.3em;
 }
 
 .warning-popup p {
-    line-height:1.2em;
+    font-family: YouTubeSansRegular;
+    font-size:1.2em;
 }
