@@ -2,6 +2,7 @@
 let newSources = [];
 let sourcesToAdd = [];
 let sourcesToDelete = [];
+let warningCount = 0;
 
 $(document).ready(function () {
     var mapToken = $('#map').data('accesstoken');
@@ -78,6 +79,9 @@ $('#get-warning-data').click(function () {
 
             removeWarningsFromMap(sourcesToDelete);
             addWarningsToMap(sourcesToAdd);
+
+            warningCount = warningCount - sourcesToDelete.length + sourcesToAdd.length;
+            $('#warning-count').html(warningCount);
         });
     }
 });

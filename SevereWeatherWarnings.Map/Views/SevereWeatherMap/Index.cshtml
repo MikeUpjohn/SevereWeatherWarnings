@@ -6,6 +6,7 @@
         <div id='map' data-accesstoken="@ViewData["MapBoxConnectionString"]"></div>
     </div>
     @{
+        Html.RenderPartial("WarningCount");
         Html.RenderPartial("SelectorPanel");
         Html.RenderPartial("PopUp");
     }
