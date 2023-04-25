@@ -48,8 +48,6 @@ $('#get-warning-data').click(function () {
         $.post("/RetrieveData/GetData", request, function (data) {
             mapNewData(data);
 
-            console.log("Warning Count: " + newSources.length);
-
             let existsInNewSourceData;
             $(newSources).each(function (index, newElement) {
                 existsInNewSourceData = false;
