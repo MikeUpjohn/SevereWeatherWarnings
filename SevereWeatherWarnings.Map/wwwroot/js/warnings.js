@@ -9,6 +9,8 @@ $(document).ready(function () {
 
     createMap(32.896, -97.043, 9);
 
+    addRadarLayer();
+
     $('.expand-arrow').click(function () {
         if ($('.side-panel-container').hasClass('open')) {
             $('.side-panel-container').removeClass('open');
@@ -107,3 +109,45 @@ function mapNewData(data) {
         newSources.push(item);
     });
 }
+
+const twcApiKey = '9273f14c853b4634b3f14c853bd634ab';
+
+const timeSlices = fetch('https://api.weather.com/v3/TileServer/series/productSet/PPAcore?apiKey=' +
+    twcApiKey);
+
+// this function resolves the metadata promise,
+// extracts the most recent publish time for radar data,
+// and adds the radar layer to the map
+const addRadarLayer = () => {
+    timeSlices
+        .then((res) => res.json())
+        .then((res) => {
+            const radarTimeSlices = res.seriesInfo.radar.series;
+            const latestTimeSlice = radarTimeSlices[0].ts;
+
+            // insert the latest time for radar into the source data URL
+            map.addSource('twcRadar', {
+                type: 'raster',
+                tiles: [
+                    'https://api.weather.com/v3/TileServer/tile/radar?ts=' +
+                    latestTimeSlice +
+                    '&xyz={x}:{y}:{z}&apiKey=' +
+                    twcApiKey,
+                ],
+                tileSize: 256,
+            });
+
+            // place the layer before the "aeroway-line" layer
+            map.addLayer(
+                {
+                    id: 'radar',
+                    type: 'raster',
+                    source: 'twcRadar',
+                    paint: {
+                        'raster-opacity': 0.5,
+                    },
+                },
+                'aeroway-line'
+            );
+        });
+};
