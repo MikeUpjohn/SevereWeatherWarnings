@@ -80,6 +80,10 @@ $('#get-warning-data').click(function () {
             removeWarningsFromMap(sourcesToDelete);
             addWarningsToMap(sourcesToAdd);
 
+            if (sourcesToAdd.length) {
+                $('#warning-sound').get(0).play();
+            }
+
             warningCount = warningCount - sourcesToDelete.length + sourcesToAdd.length;
             $('#warning-count').html(warningCount);
         });
