@@ -30,6 +30,10 @@ $(document).ready(function () {
 });
 
 $('#get-warning-data').click(function () {
+    loadWarnings();
+});
+
+function loadWarnings() {
     let selectedItemsList = [];
 
     $('input:checkbox[name=warning-selection]:checked').each(function (index, item) {
@@ -84,7 +88,7 @@ $('#get-warning-data').click(function () {
             $('#warning-count').html(warningCount);
         });
     }
-});
+}
 
 function addWarningsToMap(sourcesToAdd) {
     $(sourcesToAdd).each(function (index, element) {
@@ -153,3 +157,9 @@ const addRadarLayer = () => {
             );
         });
 };
+
+setInterval(function () {
+    loadWarnings();
+
+    console.log("refreshing map after 1 minute");
+}, 60000);

@@ -19,7 +19,10 @@ namespace SevereWeatherWarnings.Map.Presenters
                 WeatherWarnings = new List<DisplayWeatherWarning>()
             };
 
-            MapWeatherWarnings(viewModel, weatherWarningsResponse.WeatherWarnings);
+            if (weatherWarningsResponse.WeatherWarnings != null)
+            {
+                MapWeatherWarnings(viewModel, weatherWarningsResponse.WeatherWarnings);
+            }
 
             return viewModel;
         }

@@ -14,9 +14,12 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
             {
                 var mappedWarnings = JsonConvert.DeserializeObject<WeatherWarningsResponse>(rawData);
 
-                foreach(var weatherWarning in mappedWarnings.WeatherWarnings)
+                if (mappedWarnings != null)
                 {
-                    weatherWarning.WarningProperties.EventType = weatherWarning.GetEventFromEventDescription();
+                    foreach (var weatherWarning in mappedWarnings.WeatherWarnings)
+                    {
+                        weatherWarning.WarningProperties.EventType = weatherWarning.GetEventFromEventDescription();
+                    }
                 }
 
                 return mappedWarnings ?? new WeatherWarningsResponse();
