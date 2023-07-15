@@ -130,6 +130,17 @@ html {
     font-size:1.2em;
 }
 
+.warning-popup .more-information-link {
+    font-weight:bold;
+    color:#000000;
+    text-decoration:none;
+    font-size:1.3em;
+}
+
+.warning-popup .more-information-link:hover {
+    text-decoration:underline;
+}
+
 .warning-count-panel {
     position: absolute;
     top: 10px;
@@ -146,7 +157,7 @@ html {
 }
 
 .warning-count-panel p {
-   colour:#000000;
+   color:#000000;
 }
 
     .warning-count-panel .warning-count {

@@ -46,6 +46,7 @@ function addDataSourceToMap(dataItem) {
         $('#headline').html(mapSourceProperties.headline);
         $('#expiryDate').html(mapSourceProperties.expiryDate);
         $('#areaDescription').html(mapSourceProperties.areaDescription);
+        $('#more-information-link').attr('data-id', dataItem.id).attr('href', 'Warning?id=' + dataItem.id);
 
         new mapboxgl.Popup({ closeButton: false, maxWidth: '400px' })
             .setLngLat(e.lngLat)
