@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SevereWeatherWarnings.Map.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body class="@ViewData["MainClass"]">
     @if ((bool) ViewData["IsTestingMode"])
     {
         <div class="warning-banner"><b>NB: </b>Site is in testing mode. Warning data is not live.</div>
