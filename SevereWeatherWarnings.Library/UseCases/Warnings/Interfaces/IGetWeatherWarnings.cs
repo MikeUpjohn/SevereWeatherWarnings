@@ -5,6 +5,6 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings.Interfaces
 {
     public interface IGetWeatherWarnings
     {
-        Task<WeatherWarningsResponse> GetActiveWeatherWarnings(RetrieveDataRequest request);
+        Task<WeatherWarningsResponse> GetAllActiveWarnings(RetrieveDataRequest request);
     }
 }

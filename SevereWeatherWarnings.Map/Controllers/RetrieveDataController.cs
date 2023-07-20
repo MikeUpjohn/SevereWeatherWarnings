@@ -18,11 +18,11 @@ namespace SevereWeatherWarnings.Map.Controllers
             _mapWarningDataPresenter = mapWarningDataPresenter;
         }
 
-        public async Task<JsonResult> GetData(RetrieveDataRequest request)
+        public async Task<JsonResult> GetAllLiveWarnings(RetrieveDataRequest request)
         {
             request.IsTestingMode = bool.Parse(_configuration["Settings:IsTestingMode"]);
-            var warningsRawData = await _getWeatherWarnings.GetActiveWeatherWarnings(request);
-            var mappedWarningData = _mapWarningDataPresenter.Present(warningsRawData);
+            var allLiveWarnings = await _getWeatherWarnings.GetAllActiveWarnings(request);
+            var mappedWarningData = _mapWarningDataPresenter.Present(allLiveWarnings);
 
             return Json(mappedWarningData);
         }

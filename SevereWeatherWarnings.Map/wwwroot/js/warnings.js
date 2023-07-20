@@ -52,7 +52,7 @@ function loadWarnings() {
         sourcesToAdd = [];
         sourcesToDelete = [];
 
-        $.post("/RetrieveData/GetData", request, function (data) {
+        $.post("/RetrieveData/GetAllLiveWarnings", request, function (data) {
             mapNewData(data);
 
             let existsInNewSourceData;
