@@ -1,5 +1,5 @@
-using SevereWeatherWarnings.Library.UseCases.Warnings;
-using SevereWeatherWarnings.Library.UseCases.Warnings.Interfaces;
+using SevereWeatherWarnings.Library.UseCases.Warnings.GetAllWeatherWarnings;
+using SevereWeatherWarnings.Library.UseCases.Warnings.GetAllWeatherWarnings.Interfaces;
 using SevereWeatherWarnings.Library.Utilities;
 using SevereWeatherWarnings.Library.Utilities.Interfaces;
 using SevereWeatherWarnings.Map.Presenters;

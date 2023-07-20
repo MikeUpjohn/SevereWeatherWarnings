@@ -1,10 +1,10 @@
 ﻿using SevereWeatherWarnings.Library.Extensions;
-using SevereWeatherWarnings.Library.UseCases.Warnings.Interfaces;
+using SevereWeatherWarnings.Library.UseCases.Warnings.GetAllWeatherWarnings.Interfaces;
 using SevereWeatherWarnings.Library.Utilities.Interfaces;
 using SevereWeatherWarnings.Models;
 using SevereWeatherWarnings.Models.API;
 
-namespace SevereWeatherWarnings.Library.UseCases.Warnings
+namespace SevereWeatherWarnings.Library.UseCases.Warnings.GetAllWeatherWarnings
 {
     public class GetWeatherWarnings : IGetWeatherWarnings
     {
