@@ -3,9 +3,10 @@ using SevereWeatherWarnings.Models.API;
 using SevereWeatherWarnings.Models.Display;
 using APIWeatherWarning = SevereWeatherWarnings.Models.API.WeatherWarning;
 using DisplayWeatherWarning = SevereWeatherWarnings.Models.Display.WeatherWarning;
-using DisplayGeometry = SevereWeatherWarnings.Models.Display.Geometry;
-using DisplayWarningProperties = SevereWeatherWarnings.Models.Display.WarningProperties;
+using DisplayGeometry = SevereWeatherWarnings.Models.Display.Common.Geometry;
+using DisplayWarningProperties = SevereWeatherWarnings.Models.Display.Common.WarningProperties;
 using SevereWeatherWarnings.Library.Extensions;
+using SevereWeatherWarnings.Models.Display.Common;
 
 namespace SevereWeatherWarnings.Map.Presenters
 {
