@@ -7,6 +7,6 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings.Interfaces
     {
         Task<WeatherWarningsResponse> GetAllActiveWarnings(RetrieveDataRequest request);
 
-        void GetWeatherWarningDetail(string id);
+        Task<WeatherWarning> GetWeatherWarningDetail(RetrieveWarningRequest request);
     }
 }

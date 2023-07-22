@@ -1,7 +1,10 @@
-﻿namespace SevereWeatherWarnings.Library.UseCases.Warnings.GetSingleWarning.Interfaces
+﻿using SevereWeatherWarnings.Models;
+using SevereWeatherWarnings.Models.API;
+
+namespace SevereWeatherWarnings.Library.UseCases.Warnings.GetSingleWarning.Interfaces
 {
     public interface IGetSingleWeatherWarning
     {
-        void GetWeatherWarningDetail(string id);
+        Task<WeatherWarning> GetWeatherWarningDetail(RetrieveWarningRequest request);
     }
 }

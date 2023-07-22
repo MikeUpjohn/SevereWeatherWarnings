@@ -21,7 +21,7 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
         public Task<WeatherWarningsResponse> GetAllActiveWarnings(RetrieveDataRequest request)
             => _getWeatherWarnings.GetAllActiveWarnings(request);
 
-        public void GetWeatherWarningDetail(string id)
-            => _getSingleWeatherWarning.GetWeatherWarningDetail(id);
+        public Task<WeatherWarning> GetWeatherWarningDetail(RetrieveWarningRequest request)
+            => _getSingleWeatherWarning.GetWeatherWarningDetail(request);
     }
 }

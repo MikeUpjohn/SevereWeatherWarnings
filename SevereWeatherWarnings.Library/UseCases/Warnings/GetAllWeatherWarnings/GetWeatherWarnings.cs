@@ -21,7 +21,7 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings.GetAllWeatherWarnings
         {
             var apiUrl = GenerateAPIUrl(request);
             var response = await _webServiceRetriever.GetData(apiUrl);
-            var mappedResponse = _mapWarnings.Map(request, response);
+            var mappedResponse = _mapWarnings.Map(response);
 
             return mappedResponse;
         }

@@ -5,6 +5,6 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings.GetAllWeatherWarnings.
 {
     public interface IMapWarnings
     {
-        WeatherWarningsResponse Map(RetrieveDataRequest request, string rawData);
+        WeatherWarningsResponse Map(string rawData);
     }
 }
