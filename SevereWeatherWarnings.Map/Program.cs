@@ -21,6 +21,7 @@ builder.Services.AddScoped<IMapWarningDataPresenter, MapWarningDataPresenter>();
 builder.Services.AddScoped<IWarnings, Warnings>();
 builder.Services.AddScoped<IGetSingleWeatherWarning, GetSingleWeatherWarning>();
 builder.Services.AddScoped<IMapWarningDetail, MapWarningDetail>();
+builder.Services.AddScoped<IMapWarningDetailPresenter, MapWarningDetailPresenter>();
 
 var app = builder.Build();
 

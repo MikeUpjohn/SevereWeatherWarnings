@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SevereWeatherWarnings.Library.UseCases.Warnings.Interfaces;
+using SevereWeatherWarnings.Map.Presenters.Interfaces;
 using SevereWeatherWarnings.Models;
 
 namespace SevereWeatherWarnings.Map.Controllers
@@ -8,11 +9,13 @@ namespace SevereWeatherWarnings.Map.Controllers
     {
         private readonly IConfiguration _configuration;
         private readonly IWarnings _warnings;
+        private readonly IMapWarningDetailPresenter _weatherWarningDetailPresenter;
 
-        public WarningController(IConfiguration configuration, IWarnings warnings)
+        public WarningController(IConfiguration configuration, IWarnings warnings, IMapWarningDetailPresenter weatherWarningDetailPresenter)
         {
             _configuration = configuration;
             _warnings = warnings;
+            _weatherWarningDetailPresenter = weatherWarningDetailPresenter;
         }
 
         public IActionResult Index(string id)
@@ -25,7 +28,9 @@ namespace SevereWeatherWarnings.Map.Controllers
             var request = new RetrieveWarningRequest { IsInTestMode = isInTestingMode, Id = id };
             var result = _warnings.GetWeatherWarningDetail(request);
 
-            return View();
+            var viewModel = _weatherWarningDetailPresenter.Present(result.Result);
+
+            return View(viewModel);
         }
     }
 }
