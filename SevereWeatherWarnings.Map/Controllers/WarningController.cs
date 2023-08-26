@@ -18,7 +18,7 @@ namespace SevereWeatherWarnings.Map.Controllers
             _weatherWarningDetailPresenter = weatherWarningDetailPresenter;
         }
 
-        public IActionResult Index(string id)
+        public async Task<IActionResult> Index(string id)
         {   var isInTestingMode = bool.Parse(_configuration["Settings:IsTestingMode"]);
 
             ViewData["MapBoxConnectionString"] = _configuration["Settings:MapBoxToken"];
@@ -26,9 +26,9 @@ namespace SevereWeatherWarnings.Map.Controllers
             ViewData["MainClass"] = "warning-detail";
 
             var request = new RetrieveWarningRequest { IsInTestMode = isInTestingMode, Id = id };
-            var result = _warnings.GetWeatherWarningDetail(request);
+            var result = await _warnings.GetWeatherWarningDetail(request);
 
-            var viewModel = _weatherWarningDetailPresenter.Present(result.Result);
+            var viewModel = _weatherWarningDetailPresenter.Present(result);
 
             return View(viewModel);
         }

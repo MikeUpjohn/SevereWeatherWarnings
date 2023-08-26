@@ -1,4 +1,5 @@
-﻿<div class="row">
+﻿@model SevereWeatherWarnings.Models.Display.WeatherWarningDetailsViewModel;
+<div class="row">
     <div class="col-md-6">
         <div class="map-window">
             <div class="text-center">
@@ -8,7 +9,7 @@
     </div>
     <div class="col-md-6">
         <div class="warning-details">
-            <h1>Severe Thunderstorm Warning</h1>
+            <h1>@Model.WarningProperties.Event</h1>
             <h2>Carroll, AR; Franklin, AR; Madison, AR</h2>
             <br />
             <h3>Severe Thunderstorm Warning issued February 27 at 1:45AM CST until February 27 at 2:00AM CST by NWS Tulsa OK</h3>
