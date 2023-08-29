@@ -2,6 +2,7 @@
 using SevereWeatherWarnings.Models.Display;
 using APIWeatherWarning = SevereWeatherWarnings.Models.API.WeatherWarning;
 using DisplayGeometry = SevereWeatherWarnings.Models.Display.Common.Geometry;
+using DisplayWarningProperties = SevereWeatherWarnings.Models.Display.Common.WarningProperties;
 
 namespace SevereWeatherWarnings.Map.Presenters
 {
@@ -13,7 +14,8 @@ namespace SevereWeatherWarnings.Map.Presenters
             {
                 Id = weatherWarning.Id,
                 Type = weatherWarning.Type,
-                WarningGeometry = MapWarningGeometry(weatherWarning)
+                WarningGeometry = MapWarningGeometry(weatherWarning),
+                WarningProperties = MapWarningProperties(weatherWarning),
             };
 
             return viewModel;
@@ -24,10 +26,21 @@ namespace SevereWeatherWarnings.Map.Presenters
             var displayGeometry = new DisplayGeometry
             {
                 Type = weatherWarning.WarningGeometry.Type,
-                CoOrdinates = weatherWarning.WarningGeometry.CoOrdinates
+                CoOrdinates = weatherWarning.WarningGeometry.CoOrdinates,
             };
 
             return displayGeometry;
+        }
+
+        private DisplayWarningProperties MapWarningProperties(APIWeatherWarning weatherWarning)
+        {
+            var warningProperties = weatherWarning.WarningProperties;
+            var displayWarningProperties = new DisplayWarningProperties
+            {
+                Event = warningProperties.Event
+            };
+
+            return displayWarningProperties;
         }
     }
 }
