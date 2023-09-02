@@ -100,8 +100,8 @@ function addWarningsToMap(sourcesToAdd) {
 
 function drawWarningPolygon(dataItem) {
     addDataSourceToMap(dataItem);
-    drawPolygon(dataItem.id, dataItem.displayProperties.fillColourHexCode, 0.3);
-    drawPolygonBorder(dataItem.id, dataItem.displayProperties.lineColourHexCode, 0.3);
+    drawPolygon(dataItem.friendlyId, dataItem.displayProperties.fillColourHexCode, 0.3);
+    drawPolygonBorder(dataItem.friendlyId, dataItem.displayProperties.lineColourHexCode, 0.3);
 }
 
 function removeWarningsFromMap(sourcesToDelete) {

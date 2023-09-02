@@ -1,0 +1,121 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.77d565d093dd070c486e39fce19501db01092e63.001.1",
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -91.329999999999998,
+                    35.100000000000001
+                ],
+                [
+                    -91.280000000000001,
+                    35.219999999999999
+                ],
+                [
+                    -91.230000000000004,
+                    35.390000000000001
+                ],
+                [
+                    -91.13000000000001,
+                    35.380000000000003
+                ],
+                [
+                    -91.170000000000016,
+                    35.210000000000001
+                ],
+                [
+                    -91.220000000000013,
+                    35.079999999999998
+                ],
+                [
+                    -91.329999999999998,
+                    35.100000000000001
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.77d565d093dd070c486e39fce19501db01092e63.001.1",
+        "@type": "wx:Alert",
+        "id": "urn:oid:2.49.0.1.840.0.77d565d093dd070c486e39fce19501db01092e63.001.1",
+        "areaDesc": "Jackson, AR; Woodruff, AR",
+        "geocode": {
+            "SAME": [
+                "005067",
+                "005147"
+            ],
+            "UGC": [
+                "ARC067",
+                "ARC147"
+            ]
+        },
+        "affectedZones": [
+            "https://api.weather.gov/zones/county/ARC067",
+            "https://api.weather.gov/zones/county/ARC147"
+        ],
+        "references": [
+            {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8de8ca21153661d7d5d04ea917532e7846f251cd.002.1",
+                "identifier": "urn:oid:2.49.0.1.840.0.8de8ca21153661d7d5d04ea917532e7846f251cd.002.1",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "sent": "2023-02-26T10:13:00-06:00"
+            }
+        ],
+        "sent": "2023-02-26T20:21:00-06:00",
+        "effective": "2023-02-26T20:21:00-06:00",
+        "onset": "2023-02-26T20:21:00-06:00",
+        "expires": "2023-02-27T20:30:00-06:00",
+        "ends": "2023-03-02T12:00:00-06:00",
+        "status": "Actual",
+        "messageType": "Update",
+        "category": "Met",
+        "severity": "Severe",
+        "certainty": "Observed",
+        "urgency": "Immediate",
+        "event": "Flood Warning",
+        "sender": "w-nws.webmaster@noaa.gov",
+        "senderName": "NWS Little Rock AR",
+        "headline": "Flood Warning issued February 26 at 8:21PM CST until March 2 at 12:00PM CST by NWS Little Rock AR",
+        "description": "* WHAT...Minor flooding is occurring and minor flooding is forecast.\n\n* WHERE...Cache River Near Patterson.\n\n* WHEN...Until early Thursday afternoon.\n\n* IMPACTS...At 9.0 feet, Low swampy timberland along the river\nbegins to flood. Flood gates should be closed and equipment moved\nout of the low grounds along the river and tributaries.\n\n* ADDITIONAL DETAILS...\n- At 7:15 PM CST Sunday the stage was 9.5 feet.\n- Forecast...The river is expected to fall below flood stage\nWednesday morning and continue falling to 7.8 feet Friday\nevening.\n- Flood stage is 9.0 feet.",
+        "instruction": null,
+        "response": "Avoid",
+        "parameters": {
+            "AWIPSidentifier": [
+                "FLSLZK"
+            ],
+            "WMOidentifier": [
+                "WGUS84 KLZK 270221"
+            ],
+            "NWSheadline": [
+                "FLOOD WARNING REMAINS IN EFFECT UNTIL EARLY THURSDAY AFTERNOON"
+            ],
+            "BLOCKCHANNEL": [
+                "EAS",
+                "NWEM",
+                "CMAS"
+            ],
+            "EAS-ORG": [
+                "WXR"
+            ],
+            "VTEC": [
+                "/O.CON.KLZK.FL.W.0002.000000T0000Z-230302T1800Z/"
+            ],
+            "eventEndingTime": [
+                "2023-03-02T18:00:00+00:00"
+            ],
+            "expiredReferences": [
+                "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.7c35bc569397ae4b38805762e664046dfc8a11b1.002.1,2023-02-25T19:35:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.89c6fbb15eb8b9c28d3e4e0c7ef48ab08b50c275.001.1,2023-02-25T10:30:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.7a349cb82c9a8e03e9bc4fbbae7ac014e1f46276.006.1,2023-02-24T19:59:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.9820d0bf9dcf3171140edc5c7115623ee126cc08.005.1,2023-02-24T09:08:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.e974585125a23066bd7cfb1725fecd2a68082326.008.1,2023-02-23T19:39:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.05aa1204fd8774a7455ca6276b90e1789ba07881.001.1,2023-02-23T10:11:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.c793c52785c8dbf0c2d992aca607e13101dae561.001.1,2023-02-22T19:32:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.2be4293281d65d2b1459590f306f3f34b4f67e22.001.1,2023-02-22T09:41:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.69dc988574278d8c45d1f390d3a3d18eb0850dc7.001.1,2023-02-21T19:42:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.2c008a83912a5f5c255622d9ed0234286ce29b21.001.1,2023-02-21T09:04:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.3c4b2603207140d25ea3540992f89d4f7007f5cd.001.1,2023-02-20T18:40:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.7c2a8ddc3f2b86c7bd397278bdd64897ccad66ad.002.1,2023-02-20T09:37:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.d137d6141710274cc920dc3b6d92808caae84179.001.1,2023-02-19T19:44:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.237b4902cd2749ca26f5f39ca6fb003204e6a65d.001.1,2023-02-19T08:37:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.20c43592ed1d0c65132c54d9cce764f49014dec2.001.1,2023-02-18T20:05:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.39632b856c026c554ef0cae3678734fda5b3efcd.002.1,2023-02-18T10:22:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.5822d2b6afebc964d908efe6b9da1d8aafe2aaf0.001.1,2023-02-17T20:16:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.e1dd4f00a271d59512bcd57fc1bc716a59cee2b8.002.1,2023-02-17T10:09:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.faf57ba383b50d861333bd9316894bd07460a128.001.1,2023-02-16T20:36:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.e6f156a6f35a69949ab2656f10b758073d0231ee.001.1,2023-02-16T11:15:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.90a130d8c39b88a0337e9bbd4d2bef9009638dae.001.1,2023-02-15T19:24:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.fbfd8808f11650509ec310a1a8b427ed89fcf9f4.001.1,2023-02-15T10:25:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.e193f2f1e068d1cf68cf9ca3a554c2d273750949.001.1,2023-02-14T19:45:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.cfe2263955ab3d7b4815acac4909677d3094d134.002.1,2023-02-14T10:37:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.4d468afb66f2a2d8460b391aa95713ac84e07f86.001.1,2023-02-13T19:27:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.2d262631f597cf576b197ce3e44c98350de82b29.001.1,2023-02-13T10:26:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.a7bcc11fbb617fd424f10d940f6bef6ec7901a1b.001.1,2023-02-12T20:14:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.f1517b406cc42195dc9465b96ab24a3b00de30c5.001.1,2023-02-12T09:56:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.a8cfe96fe89acc715ca1621b7681452ad3efcd62.004.1,2023-02-11T19:59:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.8b52c99508f03dc9aa8ee966eb2ac4cc1e1784cd.001.1,2023-02-11T10:05:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.8d1a73efa58ed346415d4c0d07d46381d9ade672.006.1,2023-02-10T19:33:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.500b6f9e07868a80eb7b09231968f1e47457c218.001.1,2023-02-10T10:26:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.f61edc2dcc6554b454d6260826c82f7dc0f10425.001.1,2023-02-09T21:20:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.b567208d8d1758b55659bac8821aa98de54515a0.001.1,2023-02-09T09:26:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.13519a6e52a1e33da75fff94550f53aae90306f1.001.1,2023-02-08T20:19:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.ae4841b01bcce1f9f70c21245d7d7d446a20ee3d.001.1,2023-02-08T11:21:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.9fa74c92e46b03a98dad226aec1d6dc329af57b1.001.1,2023-02-07T20:13:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.3c611b105b8c8fe47fb3aef2386c2304aeadd9d3.001.1,2023-02-07T10:29:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.699c3cd56e0adf72f5543a98b65ccafebf463d3a.003.1,2023-02-06T19:12:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.bd1835aa36bedf1a385ee62b4a22b2a99b9d4e4e.004.1,2023-02-06T10:24:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.3a70cc73342a5b308da9bec5507af0450fdbfa42.003.1,2023-02-05T19:10:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.64825d6c61f6065d366efb84d8163436d7bb89f0.005.1,2023-02-05T10:00:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.3d84c1854a5555620553ef4add0160dce7f86419.001.1,2023-02-04T18:59:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.3432d837720b4dabbeccbd3fb886de07d2365b3d.004.1,2023-02-04T10:15:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.2b9fa704c28335e48efbe3b813bbf3d8d3e6ec9b.001.1,2023-02-03T19:41:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.ff50a16931bc9c4039ddc3561b55a07d704c436e.001.1,2023-02-03T10:48:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.7d1d755e402534e45550edc1fd59a1efc61ede8d.001.1,2023-02-02T19:28:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.c583bf1d9523f6b712338216ac80f418baf4d0ed.002.1,2023-02-02T10:07:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.86c606dd44d30d220088047162df62d0dbad5c20.001.1,2023-02-01T18:44:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.6c95ea6081ce1859c7a603987062738aef15d5e8.002.1,2023-02-01T10:25:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.6ab477a7d3789e18f8378f27a2594b1e33365ead.002.1,2023-01-31T21:13:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.e9765d67cfb6b3806cbde444584418bf30d741e2.001.1,2023-01-31T10:14:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.3df970e01d439925fcaf25a219435edfb78efca2.001.1,2023-01-30T18:33:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.7f262e6c8b3b5d42501ad0964d48842fd21a8798.001.1,2023-01-30T09:44:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.fc5c7c83ef415c690156226131149a276334a673.004.1,2023-01-29T19:43:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.0787bf21e3e81fc95121fdac0361ad47c12de213.001.1,2023-01-29T10:24:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.179b63efe0f9c4e7a857fb925fc9055a9624a4b0.001.1,2023-01-28T19:30:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.6383777994b76a91878071f0e0ffaf7a15f632b9.001.1,2023-01-28T10:45:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.fae89ebad9ba709d6799357f23695014ca9d3cce.001.1,2023-01-27T19:55:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.6ff72c60581393f994bd9ce63fe95382e428f7ce.001.1,2023-01-27T10:25:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.eeb6e00b015c6144e091071e4e2cd0bc98c79f7c.001.1,2023-01-26T19:29:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.9bc357ea4c47bbf675de638bd3b29cec5c15f484.001.1,2023-01-26T10:24:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.c117caf6b29dd8d4f53ef41b0630f0ff8baeb538.001.1,2023-01-25T19:30:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.11029fef5fee1c65733ea24654e3592ae9932c5a.001.1,2023-01-25T10:18:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.16ec0bef0fe9e6321140e2e19b5122a845893c58.001.1,2023-01-24T18:24:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.a011e2e7d0b17ef169e3c73b990c297d5ac6d0e2.001.1,2023-01-24T10:48:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.cab2977463776374146b8d9c2d66c2973688c44e.001.1,2023-01-23T18:48:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.59d62ce3dd2410eb8263fce28d292d2b6511910a.001.1,2023-01-23T10:22:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.246570a078cdc9c411fde0f8b303cb31a5ad293c.001.1,2023-01-22T18:49:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.3c5062ae93be0831cf1a45fe2a3ddcbda7cd7f21.001.1,2023-01-22T09:15:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.d9ab4dc5190efcc5d95ff242f2c2341bded9ed08.001.1,2023-01-21T18:53:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.ce9701a9327945a0391a9a5f05672b7c011ab573.001.1,2023-01-21T09:46:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.9b9db1ea85f332bd527db11acd005f193d28b64e.001.1,2023-01-20T21:06:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.02cb3475ef5fb19f58ce39a59c5a2229b86501b3.001.1,2023-01-20T11:06:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.866632756de630a9b2c60488121d03e385a65c63.001.1,2023-01-19T21:20:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.bdaadf8679672bcd27b6a8f4226389e55620a7b7.001.1,2023-01-19T10:19:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.38999afe3b9b257261701b0bb34bc99c8823749b.001.1,2023-01-18T22:38:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.79298d5e5b2e18f5dc23211427a86cbfb47e333e.001.1,2023-01-18T09:21:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.bed5f8bc9fa47147d685919bc1bc81ea2302bb0b.001.1,2023-01-17T10:44:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.97cac4798f5e3aa265600dd7edbf2b7ec781afd2.001.1,2023-01-16T20:22:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.4dec4e523115f7c18157cf0267d9e017bdf235fa.001.1,2023-01-16T09:03:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.5a4e4875a2d2da32bcca3f9ffbc3890a400c5b33.001.1,2023-01-15T20:04:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.084ebf3cead2d30e9650e7c5a78529a6ced1bb8e.001.1,2023-01-15T09:19:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.d661c5c214b7f4acf4cffc619a640c35fd6c5fc7.001.1,2023-01-14T19:38:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.1d90869537466eee875de16dccc4eb1a36999414.001.1,2023-01-14T10:01:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.d0d4735105fad6788d76c03e3e0362de80f4a055.001.1,2023-01-13T20:32:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.c0f77b85359f577ac4813a973d7ba461d87799a9.001.1,2023-01-13T10:21:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.ceb6c213e04da56c3e5d24fe4fd5da62568aa30a.001.1,2023-01-12T19:19:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.0753d491fe0f62c9c598dc4babfe63d068b256a5.001.1,2023-01-12T10:16:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.99292e87d5767e539d4f74a8f5136569b52a45c8.001.1,2023-01-11T18:51:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.71027e6a5290c2c3946b97d1d0d74312123113b8.001.1,2023-01-11T09:21:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.ddd0b7ae79842428611d70169854a9aeaf522457.002.1,2023-01-10T19:12:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.2f31474781ca2aa4f64da81456db87deaf7b6b83.001.1,2023-01-10T10:55:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.b56225170b292504d511a39225a1f5a4620b8c1e.003.1,2023-01-09T19:35:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.ebb7c88a86cf581d0bf5b87c0b7850b96386ab91.001.1,2023-01-09T10:09:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.28d2bd8326f640406514df13326b867840cb2b32.003.1,2023-01-08T18:46:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.74517fbbbbe965d5dd8fd8cd03c3e620697f530c.001.1,2023-01-08T09:33:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.1df6f50f7d8d64d1720437ea1daefc27c6c0d2b8.002.1,2023-01-07T18:52:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.df1de6e4af83670a8d1ebe86349406e5f42ea898.001.1,2023-01-07T11:21:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.a09c1713b4c03a1aa4cda88d452e3dd36dc797cb.001.1,2023-01-06T18:56:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.9296a94823bd1be2adabe58721c6d4e4438493db.001.1,2023-01-06T10:52:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.df93c5669be5019104c59971eeaa6916cefd201b.001.1,2023-01-05T19:32:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.ab664c079337377f6ee12f917fed350ac0817907.002.1,2023-01-05T10:33:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.a84e59782ec97f7459675d1f210f15cb4d94e509.001.1,2023-01-04T18:53:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.a2dfecdaa7655174528ed01fe33de1d62f5c2386.001.1,2023-01-04T10:07:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.bd71cc6e0d9dd8d60485c6236f8699107bce59c5.001.1,2023-01-03T20:00:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.c85a1400b0c91815c8410c7bbbc8254db04089d9.001.1,2023-01-03T11:04:10-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.db0670cbe4d48387a726508ed9fe66dcd8f07293.001.1,2023-01-02T18:48:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.68b5b0fdad8d1938c1c38ba0052bb2c1de60e0e2.001.1,2023-01-02T09:32:00-06:00"
+            ]
+        }
+    }
+}

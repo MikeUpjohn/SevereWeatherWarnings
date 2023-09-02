@@ -12,6 +12,7 @@ namespace SevereWeatherWarnings.Models.Display
     public class WeatherWarning
     {
         public string Id { get; set; }
+        public string FriendlyId { get; set; }
         public GeoJsonFeatureType Type { get; set; }
         public Geometry WarningGeometry { get; set; }
         public WarningProperties WarningProperties { get; set; }

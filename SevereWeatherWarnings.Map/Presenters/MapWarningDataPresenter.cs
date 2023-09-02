@@ -35,6 +35,7 @@ namespace SevereWeatherWarnings.Map.Presenters
                 var displayWeatherWarning = new DisplayWeatherWarning
                 {
                     Id = apiWeatherWarning.Id,
+                    FriendlyId = MapFriendlyId(apiWeatherWarning),
                     Type = apiWeatherWarning.Type,
                     WarningGeometry = MapWarningGeometry(apiWeatherWarning),
                     WarningProperties = MapWarningProperties(apiWeatherWarning),
@@ -43,6 +44,11 @@ namespace SevereWeatherWarnings.Map.Presenters
 
                 viewModel.WeatherWarnings.Add(displayWeatherWarning);
             };
+        }
+
+        private static string MapFriendlyId(APIWeatherWarning apiWeatherWarning)
+        {
+            return apiWeatherWarning.Id.Replace("https://api.weather.gov/alerts/urn:oid:", "");
         }
 
         private DisplayGeometry MapWarningGeometry(APIWeatherWarning weatherWarning)

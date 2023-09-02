@@ -1,0 +1,131 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cfa4bf19c07fad0482569d10bb00895275cddeb7.001.1",
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -93.829999999999998,
+                    37.439999999999998
+                ],
+                [
+                    -93.939999999999998,
+                    37.489999999999995
+                ],
+                [
+                    -93.9599999,
+                    37.599999999999994
+                ],
+                [
+                    -93.790000000000006,
+                    37.719999999999992
+                ],
+                [
+                    -93.609999999999999,
+                    37.599999999999994
+                ],
+                [
+                    -93.620000000000005,
+                    37.499999999999993
+                ],
+                [
+                    -93.780000000000001,
+                    37.379999999999995
+                ],
+                [
+                    -93.829999999999998,
+                    37.439999999999998
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cfa4bf19c07fad0482569d10bb00895275cddeb7.001.1",
+        "@type": "wx:Alert",
+        "id": "urn:oid:2.49.0.1.840.0.cfa4bf19c07fad0482569d10bb00895275cddeb7.001.1",
+        "areaDesc": "Cedar, MO; Dade, MO",
+        "geocode": {
+            "SAME": [
+                "029039",
+                "029057"
+            ],
+            "UGC": [
+                "MOC039",
+                "MOC057"
+            ]
+        },
+        "affectedZones": [
+            "https://api.weather.gov/zones/county/MOC039",
+            "https://api.weather.gov/zones/county/MOC057"
+        ],
+        "references": [
+            {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.bc1d32067a0520ec8a2ffa0652bc46265be944da.001.1",
+                "identifier": "urn:oid:2.49.0.1.840.0.bc1d32067a0520ec8a2ffa0652bc46265be944da.001.1",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "sent": "2023-02-27T01:30:00-06:00"
+            }
+        ],
+        "sent": "2023-02-27T01:41:00-06:00",
+        "effective": "2023-02-27T01:41:00-06:00",
+        "onset": "2023-02-27T01:41:00-06:00",
+        "expires": "2023-02-27T02:00:00-06:00",
+        "ends": "2023-02-27T02:00:00-06:00",
+        "status": "Actual",
+        "messageType": "Update",
+        "category": "Met",
+        "severity": "Extreme",
+        "certainty": "Observed",
+        "urgency": "Immediate",
+        "event": "Tornado Warning",
+        "sender": "w-nws.webmaster@noaa.gov",
+        "senderName": "NWS Springfield MO",
+        "headline": "Tornado Warning issued February 27 at 1:41AM CST until February 27 at 2:00AM CST by NWS Springfield MO",
+        "description": "At 141 AM CST, severe thunderstorms capable of producing tornadoes\nwere located along a line extending from 9 miles northeast of\nLockwood to 9 miles northwest of Everton to near Greenfield, moving\nnortheast at 60 mph.\n\nHAZARD...Tornado.\n\nSOURCE...Radar indicated rotation.\n\nIMPACT...Flying debris will be dangerous to those caught without\nshelter. Mobile homes will be damaged or destroyed. Damage\nto roofs, windows, and vehicles will occur.  Tree damage is\nlikely.\n\nLocations impacted include...\nStockton Lake, Stockton State Park, Stockton, Dadeville, Arcola,\nUmber View Heights, Masters, Neola, Cane Hill and Bona.",
+        "instruction": "TAKE COVER NOW! Move to a basement or an interior room on the lowest\nfloor of a sturdy building. Avoid windows. If you are outdoors, in a\nmobile home, or in a vehicle, move to the closest substantial shelter\nand protect yourself from flying debris.\n\nThis line of thunderstorms is capable of producing tornadoes and\nwidespread significant wind damage. Do not wait to see or hear the\ntornado. For your protection move to an interior room on the lowest\nfloor of a building.",
+        "response": "Shelter",
+        "parameters": {
+            "AWIPSidentifier": [
+                "SVSSGF"
+            ],
+            "WMOidentifier": [
+                "WWUS53 KSGF 270741"
+            ],
+            "NWSheadline": [
+                "A TORNADO WARNING REMAINS IN EFFECT UNTIL 200 AM CST FOR SOUTHEASTERN CEDAR AND NORTHEASTERN DADE COUNTIES"
+            ],
+            "eventMotionDescription": [
+                "2023-02-27T07:41:00-00:00...storm...233DEG...53KT...37.51,-93.88 37.46,-93.79 37.42,-93.77"
+            ],
+            "maxHailSize": [
+                "0.00"
+            ],
+            "tornadoDetection": [
+                "RADAR INDICATED"
+            ],
+            "BLOCKCHANNEL": [
+                "EAS",
+                "NWEM",
+                "CMAS"
+            ],
+            "EAS-ORG": [
+                "WXR"
+            ],
+            "VTEC": [
+                "/O.CON.KSGF.TO.W.0001.000000T0000Z-230227T0800Z/"
+            ],
+            "eventEndingTime": [
+                "2023-02-27T08:00:00+00:00"
+            ]
+        }
+    }
+}

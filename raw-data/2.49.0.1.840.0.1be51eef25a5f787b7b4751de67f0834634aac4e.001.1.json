@@ -1,0 +1,114 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1be51eef25a5f787b7b4751de67f0834634aac4e.001.1",
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -92.230000000000004,
+                    33.109999999999999
+                ],
+                [
+                    -92.120000000000005,
+                    33.219999999999999
+                ],
+                [
+                    -92.100000000000009,
+                    33.149999999999999
+                ],
+                [
+                    -92.060000000000002,
+                    33
+                ],
+                [
+                    -92.100000000000009,
+                    33
+                ],
+                [
+                    -92.230000000000004,
+                    33.109999999999999
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.1be51eef25a5f787b7b4751de67f0834634aac4e.001.1",
+        "@type": "wx:Alert",
+        "id": "urn:oid:2.49.0.1.840.0.1be51eef25a5f787b7b4751de67f0834634aac4e.001.1",
+        "areaDesc": "Ashley, AR; Union, AR",
+        "geocode": {
+            "SAME": [
+                "005003",
+                "005139"
+            ],
+            "UGC": [
+                "ARC003",
+                "ARC139"
+            ]
+        },
+        "affectedZones": [
+            "https://api.weather.gov/zones/county/ARC003",
+            "https://api.weather.gov/zones/county/ARC139"
+        ],
+        "references": [
+            {
+                "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.04341525f4160d7c9f5b400e475c63af765cb330.001.1",
+                "identifier": "urn:oid:2.49.0.1.840.0.04341525f4160d7c9f5b400e475c63af765cb330.001.1",
+                "sender": "w-nws.webmaster@noaa.gov",
+                "sent": "2023-02-26T11:31:00-06:00"
+            }
+        ],
+        "sent": "2023-02-26T20:20:00-06:00",
+        "effective": "2023-02-26T20:20:00-06:00",
+        "onset": "2023-02-26T20:20:00-06:00",
+        "expires": "2023-02-27T20:30:00-06:00",
+        "ends": null,
+        "status": "Actual",
+        "messageType": "Update",
+        "category": "Met",
+        "severity": "Severe",
+        "certainty": "Observed",
+        "urgency": "Immediate",
+        "event": "Flood Warning",
+        "sender": "w-nws.webmaster@noaa.gov",
+        "senderName": "NWS Shreveport LA",
+        "headline": "Flood Warning issued February 26 at 8:20PM CST by NWS Shreveport LA",
+        "description": "* WHAT...Minor flooding is occurring and minor flooding is forecast.\n\n* WHERE...Ouachita River At Felsenthal Lock and Dam.\n\n* WHEN...Until further notice.\n\n* ADDITIONAL DETAILS...\n- At 7:30 PM CST Sunday the stage was 74.2 feet.\n- Recent Activity...The maximum river stage in the 24 hours\nending at 7:30 PM CST Sunday was 74.3 feet.\n- Forecast...The river is expected to fall to 73.5 feet Friday\nevening.\n- Flood stage is 70.0 feet.\n- Flood History...This crest compares to a previous crest of\n74.6 feet on 03/25/1992.\n- http://www.weather.gov/safety/flood",
+        "instruction": null,
+        "response": "Avoid",
+        "parameters": {
+            "AWIPSidentifier": [
+                "FLSSHV"
+            ],
+            "WMOidentifier": [
+                "WGUS84 KSHV 270220"
+            ],
+            "NWSheadline": [
+                "FLOOD WARNING REMAINS IN EFFECT UNTIL FURTHER NOTICE"
+            ],
+            "BLOCKCHANNEL": [
+                "EAS",
+                "NWEM",
+                "CMAS"
+            ],
+            "EAS-ORG": [
+                "WXR"
+            ],
+            "VTEC": [
+                "/O.CON.KSHV.FL.W.0029.000000T0000Z-000000T0000Z/"
+            ],
+            "expiredReferences": [
+                "w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.22185e9b6e4047fa2c3e73cfedb998ec6ee77d24.001.1,2023-02-25T12:10:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.a06d507afaae0414c35e21971604a155610aba23.001.1,2023-02-24T11:29:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.a0e5465b8174062fc8fcfeb03642ac523a9855d4.001.1,2023-02-23T09:55:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.917b83318a69699a6f63c4631b4342f42af0d4bf.001.1,2023-02-22T10:02:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.bd17e6067c25db7e8eb672f96f862d2036d252d0.001.1,2023-02-21T11:00:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.8e9a94ee942b722d09f728f35b8da30bc2d382d0.001.1,2023-02-20T10:18:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.d9690a9c9522a5fb8d9d9f59be79937ede4c74d1.001.1,2023-02-19T21:24:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.59fac7ca1183fa53b8ab2ea08a8920e2cace136f.001.1,2023-02-19T11:35:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.87f51d665f3bcb3f332ecff0605d55a9f49a8d4a.001.1,2023-02-18T20:39:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.f879ebe8825f242b2ad6dc26abda376d808cb4bc.001.1,2023-02-18T11:25:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.6d788867a0169c7524e0b5fb459642b7a0b7dc89.001.1,2023-02-17T11:52:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.2dc85caf06084cc8049dd1c205aa9fb9d68f6b62.001.1,2023-02-16T12:21:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.4a2b87236f05b5c16d6c326e552474f46e33288b.001.1,2023-02-15T20:58:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.4ba55385b13b0cb9f9cdb3eb1027a8d5f51b3243.001.1,2023-02-15T11:50:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.b6e6d1e7fbd250d1a1ac8a2739699876bd733382.001.1,2023-02-14T20:32:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.76904e810e7bf45147a8b0e62bb4f793aca04c60.001.1,2023-02-14T11:47:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.012838c166a858be37dcf3c3e8272cc8d596718e.001.1,2023-02-13T21:51:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.8c4c10d4a0f165fb33fe7c576796112894e04dfe.001.1,2023-02-13T12:22:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.267114497075e00d9f9ad7dd1f3e1a5b4ac9ff7e.001.1,2023-02-12T20:06:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.ccfa44e4f2644289f1bbc0d56814e253c4a1a064.001.1,2023-02-12T12:11:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.4a65772e4c3f33eee934c55e0512e172553ef473.001.1,2023-02-11T21:05:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.f9dd73cd48ed5ca7107511a6373846ed4b5dedc1.001.1,2023-02-11T10:24:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.7b085bf3be414816729afe741b2d1ef9f94069e6.001.1,2023-02-10T21:03:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.7af928125baa850f7b30640b3e23d1991b43adec.001.1,2023-02-10T10:55:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.c52cbc2e06361720456b6a68c832eb712b3b75bb.001.1,2023-02-09T20:56:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.923338073409fcb697312e211660118817fe1d95.001.1,2023-02-09T10:15:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.d9b5cfe4fbc2fe7138976085e657d42161d5bbf2.001.1,2023-02-08T20:36:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.d692f0c87ffdd11c3b0bbc02ba4498a0fc09428c.001.1,2023-02-08T11:30:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.81344541ce07a23286424f290ae0f760001e84cc.001.1,2023-02-07T20:30:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.47b5d8168e184c228d3f9a74ae7db35a0d465038.001.1,2023-02-07T11:08:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.2e320bad811c1511176f9cf37c42b2a0d084e27c.001.1,2023-02-06T19:30:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.df1200c850f90a9c3b24f57bef658797aafaafb6.001.1,2023-02-06T12:25:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.227a78d9782a2cf08c198723570ed47687bfb43f.001.1,2023-02-05T19:01:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.ef948541fbf80c4088413f146437aa9ddeeb821f.001.1,2023-02-05T10:50:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.31ff61c075251887c6ccf97a557786d17b9975d0.001.1,2023-02-04T20:08:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.603e5843164af38f6c2cf39f0306e2cd8f70eb61.001.1,2023-02-04T10:46:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.f6abdab6f98826ba73678d5832a3cd6077e7be16.001.1,2023-02-03T19:53:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.abdb0f586c0cd7a44473315fe4c433285a7410cb.001.1,2023-02-03T11:30:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.9e77fe5d541f98c4074762d43fe18cc69936a64b.001.1,2023-02-02T21:28:00-06:00 w-nws.webmaster@noaa.gov,urn:oid:2.49.0.1.840.0.1d72b4225914305791f554639a22f93374c5ebc2.001.1,2023-02-02T11:01:00-06:00"
+            ]
+        }
+    }
+}
