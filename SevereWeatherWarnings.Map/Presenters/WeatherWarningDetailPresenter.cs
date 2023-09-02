@@ -37,7 +37,8 @@ namespace SevereWeatherWarnings.Map.Presenters
             var warningProperties = weatherWarning.WarningProperties;
             var displayWarningProperties = new DisplayWarningProperties
             {
-                Event = warningProperties.Event
+                Event = warningProperties.Event,
+                EventType = warningProperties.EventType.Value
             };
 
             return displayWarningProperties;
