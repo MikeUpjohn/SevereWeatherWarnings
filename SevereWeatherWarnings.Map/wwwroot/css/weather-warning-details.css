@@ -1,0 +1,9 @@
+﻿.warning-details h1.tornado-warning {
+  background-color: #FF0000;
+}
+.warning-details h1.severe-thunderstorm-warning {
+  background-color: #FFA500;
+}
+.warning-details h1.flood-warning {
+  background-color: #00FF00;
+}
