@@ -165,3 +165,7 @@ setInterval(function () {
 
     console.log("refreshing map after 1 minute");
 }, 60000);
+
+if ($('#warning-detail-panel').length) {
+    console.log("hi");
+}

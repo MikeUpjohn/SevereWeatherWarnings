@@ -84,6 +84,9 @@ namespace SevereWeatherWarnings.Models.API
 
         public Event? EventType { get; set; }
 
+        [JsonProperty("senderName")]
+        public string SenderName { get; set; }
+
         [JsonProperty("headline")]
         public string Headline { get; set; }
 

@@ -20,6 +20,7 @@ namespace SevereWeatherWarnings.Models.Display.Common
         public Urgency Urgency { get; set; }
         public string Event { get; set; }
         public Event EventType { get; set; }
+        public string SenderName { get; set; }
         public string Headline { get; set; }
         public string Description { get; set; }
         public string Instruction { get; set; }

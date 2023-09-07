@@ -27,9 +27,13 @@ html {
     font-size: 14px;
 }
 
-body {
+body.main-map {
     overflow-y: hidden;
 }
+
+/*body.warning-detail {
+    overflow-y:hidden;
+}*/
 
 @media (min-width: 768px) {
     html {
@@ -174,7 +178,18 @@ html {
 
 .warning-detail {
     font-family: OpenSans;
+    overflow-y: hidden;
+}
+
+.warning-details {
+    height: calc(100% - 200px);
+    overflow-y: scroll;
     overflow-x: hidden;
+    padding-bottom:15px;
+}
+
+.warning-details .warning-detail-content {
+    display:block;
 }
 
 .warning-details > * {
@@ -183,7 +198,6 @@ html {
 
 .warning-details h1 {
     font-family: OpenSansBold;
-    /*background-color: #FFA500;*/
     padding: 7px 2px 10px 37px;
     margin-left: -24px;
 }
@@ -249,4 +263,9 @@ html {
 .hail-size-7 {
     background-color: purple;
     color:#FFFFFF;
+}
+
+#warning-detail-panel {
+    overflow-y:hidden;
+
 }

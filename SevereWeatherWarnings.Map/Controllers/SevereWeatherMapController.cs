@@ -19,6 +19,7 @@ namespace SevereWeatherWarnings.Map.Controllers
         {
             ViewData["MapBoxConnectionString"] = _configuration["Settings:MapBoxToken"];
             ViewData["IsTestingMode"] = bool.Parse(_configuration["Settings:IsTestingMode"]);
+            ViewData["MainClass"] = "main-map";
 
             return View();
         }

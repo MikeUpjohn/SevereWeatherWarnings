@@ -1,5 +1,5 @@
 ﻿@model SevereWeatherWarnings.Models.Display.WeatherWarningDetailsViewModel;
-<div class="row">
+<div class="row g-0">
     <div class="col-md-6">
         <div class="map-window">
             <div class="text-center">
@@ -10,68 +10,78 @@
     <div class="col-md-6">
         <div class="warning-details">
             <h1 class="@Model.WeatherWarningClassFor(Model.WarningProperties.EventType)">@Model.WarningProperties.Event</h1>
-            <h2>Carroll, AR; Franklin, AR; Madison, AR</h2>
+            <h2>@Model.WarningProperties.AreaDescription</h2>
             <br />
-            <h3>Severe Thunderstorm Warning issued February 27 at 1:45AM CST until February 27 at 2:00AM CST by NWS Tulsa OK</h3>
+            <h3>@Model.WarningProperties.Headline</h3>
             <br />
-            <p class="main-description">@Html.Raw("At 144 AM CST, severe thunderstorms were located along a line extending from 5 miles northeast of Cassville to 2 miles south of War\nEagle to 6 miles southeast of Fern, moving northeast at 45 mph.\n\nHAZARD...60 mph wind gusts.\n\nSOURCE...Radar indicated.\n\nIMPACT...Expect damage to roofs, siding, and trees.\n\nLocations in or near the path include...\nBerryville...                     Ozark...\nHuntsville...                     Eureka Springs...\nAltus...                          Denning...\nSt. Paul...                       Hindsville...\nWiederkehr Village...             Wesley...\nCass...                           Saint Paul...\nForum...                          Aurora...\nClifty...                         Boston...\nWithrow Springs State Park...     Pettigrew...\nJapton...                         Witter...\n\nThis includes Interstate 40 in Arkansas between mile markers 30 and\n42.".Replace("\n", "<br />"))</p>
-            <br />
-            <h3>More Details</h3>
-            <div class="additional-properties">
-                <div class="row">
-                    <div class="col-md-2">
-                        <span class="standard-label">Max Hail Size </span>
-                    </div>
-                    <div class="col-md-2">
-                        <span class="hail-size-1">Up to .75inch</span>
-                    </div>
+            <div class="warning-detail-content">
+                <div class="row g-0">
+                    <p class="main-description">@Html.Raw(Model.WarningProperties.Description.Replace("\n", "<br />"))</p>
                 </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <span class="standard-label">Max Hail Size </span>
-                    </div>
-                    <div class="col-md-2">
-                        <span class="hail-size-2">1.00 inch</span>
-                    </div>
+                <div class="row g-0">
+                    <p class="main-description">@Html.Raw(Model.WarningProperties.Instruction.Replace("\n", "<br />"))</p>
                 </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <span class="standard-label">Max Hail Size </span>
-                    </div>
-                    <div class="col-md-2">
-                        <span class="hail-size-3">1.50 inch</span>
-                    </div>
+                <div class="row g-0">
+                    <p class="main-description">@Html.Raw(Model.WarningProperties.Instruction.Replace("\n", "<br />"))</p>
                 </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <span class="standard-label">Max Hail Size </span>
+                <br />
+                <h3>More Details</h3>
+                <div class="additional-properties">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="standard-label">Max Hail Size </span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="hail-size-1">Up to .75inch</span>
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <span class="hail-size-4">2.00 inch</span>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="standard-label">Max Hail Size </span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="hail-size-2">1.00 inch</span>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <span class="standard-label">Max Hail Size </span>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="standard-label">Max Hail Size </span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="hail-size-3">1.50 inch</span>
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <span class="hail-size-5">2.50 inch</span>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="standard-label">Max Hail Size </span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="hail-size-4">2.00 inch</span>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <span class="standard-label">Max Hail Size </span>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="standard-label">Max Hail Size </span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="hail-size-5">2.50 inch</span>
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <span class="hail-size-6">3.00 inch</span>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="standard-label">Max Hail Size </span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="hail-size-6">3.00 inch</span>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <span class="standard-label">Max Hail Size </span>
-                    </div>
-                    <div class="col-md-2">
-                        <span class="hail-size-7">Over 3.5 inch</span>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="standard-label">Max Hail Size </span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="hail-size-7">Over 3.5 inch</span>
+                        </div>
                     </div>
                 </div>
             </div>
