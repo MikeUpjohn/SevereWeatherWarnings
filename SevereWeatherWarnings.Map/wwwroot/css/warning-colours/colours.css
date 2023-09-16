@@ -1,0 +1,11 @@
+﻿:root {
+  --yellow: #FFD800;
+  --red: #FF0000;
+}
+/* Wind Threat Labels */
+.wind-threat-1 {
+  background-color: var(--yellow);
+}
+.wind-threat-2 {
+  background-color: var(--red);
+}

@@ -6,5 +6,9 @@
   {
     "outputFile": "wwwroot/css/weather-warning-details.css",
     "inputFile": "wwwroot/css/weather-warning-details.less"
+  },
+  {
+    "outputFile": "wwwroot/css/warning-colours/colours.css",
+    "inputFile": "wwwroot/css/warning-colours/colours.less"
   }
 ]
