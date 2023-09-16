@@ -1,4 +1,6 @@
-﻿@model SevereWeatherWarnings.Models.Display.WeatherWarningDetailsViewModel;
+﻿@using SevereWeatherWarnings.Library.Helpers
+
+@model SevereWeatherWarnings.Models.Display.WeatherWarningDetailsViewModel;
 <div class="row g-0">
     <div class="col-md-6">
         <div class="map-window">
@@ -27,19 +29,23 @@
                 <br />
                 <h3>More Details</h3>
                 <div class="additional-properties">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <span class="standard-label">Max Hail Size </span>
-                            <span class="hail-size-1">Up to .75inch</span>
+                    @if (Model.WarningProperties.Parameters.WindThreat != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @*<span class="standard-label">Max Hail Size </span>
+                            <span class="hail-size-1">Up to .75inch</span>*@
+                                @Html.WindThreatLabel(Model.WarningProperties.Parameters.WindThreat)
+                            </div>
                         </div>
-                    </div>
+                    }
                     <div class="row">
                         <div class="col-md-12">
                             <span class="standard-label">Max Hail Size </span>
                             <span class="hail-size-2">1.00 inch</span>
                         </div>
                     </div>
-                    <div class="row">
+                    @*<div class="row">
                         <div class="col-md-12">
                             <span class="standard-label">Max Hail Size </span>
                             <span class="hail-size-3">1.50 inch</span>
@@ -68,7 +74,7 @@
                             <span class="standard-label">Max Hail Size </span>
                             <span class="hail-size-7">Over 3.5 inch</span>
                         </div>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>

@@ -25,5 +25,6 @@ namespace SevereWeatherWarnings.Models.Display.Common
         public string Description { get; set; }
         public string Instruction { get; set; }
         public Response Response { get; set; }
+        public WarningParameters Parameters { get; set; }
     }
 }

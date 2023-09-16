@@ -5,6 +5,9 @@ using SevereWeatherWarnings.Models.Display.Common;
 using APIWeatherWarning = SevereWeatherWarnings.Models.API.WeatherWarning;
 using DisplayGeometry = SevereWeatherWarnings.Models.Display.Common.Geometry;
 using DisplayWarningProperties = SevereWeatherWarnings.Models.Display.Common.WarningProperties;
+using APIWarningParameters = SevereWeatherWarnings.Models.API.WarningParameters;
+using DisplayWarningParameters = SevereWeatherWarnings.Models.Display.Common.WarningParameters;
+using SevereWeatherWarnings.Models.Display.Enums;
 
 namespace SevereWeatherWarnings.Map.Presenters
 {
@@ -59,10 +62,47 @@ namespace SevereWeatherWarnings.Map.Presenters
                 Headline = warningProperties.Headline,
                 Description = warningProperties.Description,
                 Instruction = warningProperties.Instruction,
-                Response = warningProperties.Response
+                Response = warningProperties.Response,
+                Parameters = MapWarningParameters(warningProperties.Parameters)
             };
 
             return displayWarningProperties;
+        }
+
+        private DisplayWarningParameters MapWarningParameters(APIWarningParameters warningParameters)
+        {
+            DisplayWarningParameters displayWarningParameters = new DisplayWarningParameters();
+            displayWarningParameters.WindThreat = warningParameters.WindThreat != null ? MapWindThreat(warningParameters.WindThreat) : null;
+
+            return displayWarningParameters;
+        }
+
+        private WindThreatParameter MapWindThreat(string[] windThreat)
+        {
+            var rawValue = windThreat;
+            var displayValue = EnumExtensions.GetEnumValueFromDescription<WindThreat>(rawValue[0]);
+            var cssClass = GetWindThreatCssClass(displayValue);
+
+            return new WindThreatParameter
+            {
+                ParameterType = WarningParamaterType.WindThreat,
+                RawValue = rawValue,
+                DisplayValue = displayValue,
+                CssClass = cssClass
+            };
+        }
+
+        private string GetWindThreatCssClass(WindThreat displayValue)
+        {
+            switch (displayValue)
+            {
+                case WindThreat.RadarIndicated:
+                    return "wind-threat-1";
+                case WindThreat.Observed:
+                    return "wind-threat-2";
+                default:
+                    return string.Empty;
+            }
         }
 
         private WarningDate MapDateProperties(DateTimeOffset? dateTimeOffset)

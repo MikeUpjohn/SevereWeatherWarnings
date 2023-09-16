@@ -227,13 +227,25 @@ html {
 }
 
 .additional-properties span {
-    width:125px;
     font-weight:bold;
 }
 
-.hail-size-1 {
-    background-color: lawngreen;
-}
+    .additional-properties span.standard-label {
+        width: 200px;
+    }
+
+    .additional-properties span.standard-label-value {
+        width: 250px;
+    }
+
+    .additional-properties span.container-label {
+        width: 500px;
+        display: block;
+    }
+
+    .hail-size-1 {
+        background-color: lawngreen;
+    }
 
 .hail-size-2 {
     background-color: greenyellow;
