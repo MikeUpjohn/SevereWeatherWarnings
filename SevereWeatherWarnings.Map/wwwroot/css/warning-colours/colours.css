@@ -1,6 +1,11 @@
 ﻿:root {
-  --yellow: #FFD800;
+  --green: #66FF66;
+  --orange: #FF8000;
+  --orange-red: #FF4800;
+  --pink: #F50581;
+  --purple: #8400FF;
   --red: #FF0000;
+  --yellow: #FFD800;
 }
 /* Wind Threat Labels */
 .wind-threat-1 {
@@ -8,4 +13,27 @@
 }
 .wind-threat-2 {
   background-color: var(--red);
+}
+/* Max Wind Gust */
+.max-wind-gust-1 {
+  background-color: var(--green);
+}
+.max-wind-gust-2 {
+  background-color: var(--yellow);
+}
+.max-wind-gust-3 {
+  background-color: var(--orange);
+}
+.max-wind-gust-4 {
+  background-color: var(--orange-red);
+}
+.max-wind-gust-5 {
+  background-color: var(--red);
+}
+.max-wind-gust-6 {
+  background-color: var(--pink);
+}
+.max-wind-gust-7 {
+  background-color: var(--purple);
+  color: var(--bs-white);
 }

@@ -37,12 +37,14 @@
                             </div>
                         </div>
                     }
-                    <div class="row">
-                        <div class="col-md-12">
-                            <span class="standard-label">Max Hail Size</span>
-                            <span class="hail-size-2">1.00 inch</span>
+                    @if(Model.WarningProperties.Parameters.MaxWindGust != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.MaxWindGustLabel(Model.WarningProperties.Parameters.MaxWindGust)
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>

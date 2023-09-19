@@ -73,6 +73,7 @@ namespace SevereWeatherWarnings.Map.Presenters
         {
             DisplayWarningParameters displayWarningParameters = new DisplayWarningParameters();
             displayWarningParameters.WindThreat = warningParameters.WindThreat != null ? MapWindThreat(warningParameters.WindThreat) : null;
+            displayWarningParameters.MaxWindGust = warningParameters.MaxWindGust != null ? MapMaxWindGust(warningParameters.MaxWindGust) : null;
 
             return displayWarningParameters;
         }
@@ -85,7 +86,7 @@ namespace SevereWeatherWarnings.Map.Presenters
 
             return new WindThreatParameter
             {
-                ParameterType = WarningParamaterType.WindThreat,
+                ParameterType = WarningParameterType.WindThreat,
                 RawValue = rawValue,
                 DisplayValue = displayValue,
                 CssClass = cssClass
@@ -103,6 +104,35 @@ namespace SevereWeatherWarnings.Map.Presenters
                 default:
                     return string.Empty;
             }
+        }
+
+        private MaxWindGustParameter MapMaxWindGust(string[] maxWindGust)
+        {
+            var rawValue = maxWindGust;
+            var displayValue = rawValue[0];
+            int.TryParse(maxWindGust[0].Replace(" MPH", ""), out int maxWindGustValue);
+            var cssClass = GetMaxWindGustCssClass(maxWindGustValue);
+
+            return new MaxWindGustParameter
+            {
+                ParameterType = WarningParameterType.MaxWindGust,
+                RawValue = rawValue,
+                DisplayValue = displayValue,
+                CssClass = cssClass
+            };
+        }
+
+        private string GetMaxWindGustCssClass(int maxWindGust)
+        {
+            if (maxWindGust >= 50 && maxWindGust < 60) { return "max-wind-gust-1"; }
+            if (maxWindGust >= 60 && maxWindGust < 70) { return "max-wind-gust-2"; }
+            if (maxWindGust >= 70 && maxWindGust < 80) { return "max-wind-gust-3"; }
+            if (maxWindGust >= 80 && maxWindGust < 90) { return "max-wind-gust-4"; }
+            if (maxWindGust >= 90 && maxWindGust < 100) { return "max-wind-gust-5"; }
+            if (maxWindGust >= 100 && maxWindGust < 110) { return "max-wind-gust-6"; }
+            if (maxWindGust >= 110) { return "max-wind-gust-7"; }
+
+            return "";
         }
 
         private WarningDate MapDateProperties(DateTimeOffset? dateTimeOffset)

@@ -2,10 +2,12 @@
 
 namespace SevereWeatherWarnings.Models.Display.Enums
 {
-    public enum WarningParamaterType
+    public enum WarningParameterType
     {
         [Description("Wind Threat")]
         WindThreat = 1,
+
+        [Description("Max Wind Gust")]
         MaxWindGust = 2,
         HailThreat = 3,
         MaxHailSize = 4,
