@@ -42,5 +42,23 @@ namespace SevereWeatherWarnings.Library.Helpers
 
             return new HtmlString(container.GetString());
         }
+
+        public static IHtmlContent HailThreatLabel(this IHtmlHelper htmlHelper, HailThreatParameter hailThreatParameter)
+        {
+            var label = new TagBuilder("span");
+            label.MergeAttribute("class", "standard-label");
+            label.InnerHtml.SetContent(EnumExtensions.GetDescription(hailThreatParameter.ParameterType));
+
+            var value = new TagBuilder("span");
+            value.MergeAttribute("class", $"standard-label-value {hailThreatParameter.CssClass}");
+            value.InnerHtml.SetContent(EnumExtensions.GetDescription(hailThreatParameter.DisplayValue));
+
+            var container = new TagBuilder("span");
+            container.MergeAttribute("class", "container-label");
+            container.InnerHtml.AppendHtml(label.GetString());
+            container.InnerHtml.AppendHtml(value.GetString());
+
+            return new HtmlString(container.GetString());
+        }
     }
 }

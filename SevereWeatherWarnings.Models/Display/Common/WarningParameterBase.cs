@@ -2,7 +2,7 @@
 
 namespace SevereWeatherWarnings.Models.Display.Common
 {
-    public class WarningParamaterBase
+    public class WarningParameterBase
     {
         public WarningParameterType ParameterType { get; set; }
         public string[] RawValue { get; set; }

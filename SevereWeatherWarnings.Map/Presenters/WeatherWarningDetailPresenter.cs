@@ -74,10 +74,12 @@ namespace SevereWeatherWarnings.Map.Presenters
             DisplayWarningParameters displayWarningParameters = new DisplayWarningParameters();
             displayWarningParameters.WindThreat = warningParameters.WindThreat != null ? MapWindThreat(warningParameters.WindThreat) : null;
             displayWarningParameters.MaxWindGust = warningParameters.MaxWindGust != null ? MapMaxWindGust(warningParameters.MaxWindGust) : null;
+            displayWarningParameters.HailThreat = warningParameters.HailThreat != null ? MapHailThreat(warningParameters.HailThreat) : null;
 
             return displayWarningParameters;
         }
 
+        #region WindThreat
         private WindThreatParameter MapWindThreat(string[] windThreat)
         {
             var rawValue = windThreat;
@@ -105,7 +107,9 @@ namespace SevereWeatherWarnings.Map.Presenters
                     return string.Empty;
             }
         }
+        #endregion
 
+        #region MaxWindGust
         private MaxWindGustParameter MapMaxWindGust(string[] maxWindGust)
         {
             var rawValue = maxWindGust;
@@ -134,7 +138,41 @@ namespace SevereWeatherWarnings.Map.Presenters
 
             return "";
         }
+        #endregion
 
+        #region HailThreat
+
+        public HailThreatParameter MapHailThreat(string[] hailThreat)
+        {
+            var rawValue = hailThreat;
+            var displayValue = EnumExtensions.GetEnumValueFromDescription<HailThreat>(rawValue[0]);
+            var cssClass = GetHailThreatCssClass(displayValue);
+
+            return new HailThreatParameter
+            {
+                ParameterType = WarningParameterType.HailThreat,
+                RawValue = rawValue,
+                DisplayValue = displayValue,
+                CssClass = cssClass,
+            };
+        }
+
+        public string GetHailThreatCssClass(HailThreat hailThreat)
+        {
+            switch (hailThreat)
+            {
+                case HailThreat.RadarIndicated:
+                    return "hail-threat-1";
+                case HailThreat.Observed:
+                    return "hail-threat-2";
+                default:
+                    return string.Empty;
+            }
+        }
+
+        #endregion
+
+        #region Helpers
         private WarningDate MapDateProperties(DateTimeOffset? dateTimeOffset)
         {
             var date = dateTimeOffset.GetValueOrDefault().DateTime;
@@ -146,5 +184,6 @@ namespace SevereWeatherWarnings.Map.Presenters
 
             return warningDate;
         }
+        #endregion
     }
 }

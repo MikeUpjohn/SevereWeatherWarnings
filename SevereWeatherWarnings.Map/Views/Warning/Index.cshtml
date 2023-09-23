@@ -37,11 +37,19 @@
                             </div>
                         </div>
                     }
-                    @if(Model.WarningProperties.Parameters.MaxWindGust != null)
+                    @if (Model.WarningProperties.Parameters.MaxWindGust != null)
                     {
                         <div class="row">
                             <div class="col-md-12">
                                 @Html.MaxWindGustLabel(Model.WarningProperties.Parameters.MaxWindGust)
+                            </div>
+                        </div>
+                    }
+                    @if (Model.WarningProperties.Parameters.HailThreat != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.HailThreatLabel(Model.WarningProperties.Parameters.HailThreat)
                             </div>
                         </div>
                     }

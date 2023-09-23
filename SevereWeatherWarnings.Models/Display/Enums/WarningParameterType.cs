@@ -9,6 +9,7 @@ namespace SevereWeatherWarnings.Models.Display.Enums
 
         [Description("Max Wind Gust")]
         MaxWindGust = 2,
+        [Description("Hail Threat")]
         HailThreat = 3,
         MaxHailSize = 4,
         ThunderstormDamage = 5,
