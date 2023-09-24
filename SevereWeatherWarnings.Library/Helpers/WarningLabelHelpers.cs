@@ -60,5 +60,23 @@ namespace SevereWeatherWarnings.Library.Helpers
 
             return new HtmlString(container.GetString());
         }
+
+        public static IHtmlContent ThunderstormDamageThreatLabel(this IHtmlHelper htmlHelper, ThunderstormDamageParameter thunderstormDamageParameter)
+        {
+            var label = new TagBuilder("span");
+            label.MergeAttribute("class", "standard-label");
+            label.InnerHtml.SetContent(EnumExtensions.GetDescription(thunderstormDamageParameter.ParameterType));
+
+            var value = new TagBuilder("span");
+            value.MergeAttribute("class", $"standard-label-value {thunderstormDamageParameter.CssClass}");
+            value.InnerHtml.SetContent(EnumExtensions.GetDescription(thunderstormDamageParameter.DisplayValue));
+
+            var container = new TagBuilder("span");
+            container.MergeAttribute("class", "container-label");
+            container.InnerHtml.AppendHtml(label.GetString());
+            container.InnerHtml.AppendHtml(value.GetString());
+
+            return new HtmlString(container.GetString());
+        }
     }
 }

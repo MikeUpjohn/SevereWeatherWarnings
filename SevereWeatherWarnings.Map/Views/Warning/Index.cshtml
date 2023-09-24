@@ -53,6 +53,14 @@
                             </div>
                         </div>
                     }
+                    @if (Model.WarningProperties.Parameters.ThunderstormDamage != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.ThunderstormDamageThreatLabel(Model.WarningProperties.Parameters.ThunderstormDamage)
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

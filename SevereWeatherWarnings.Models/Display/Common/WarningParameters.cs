@@ -7,6 +7,7 @@ namespace SevereWeatherWarnings.Models.Display.Common
         public WindThreatParameter WindThreat { get; set; }
         public MaxWindGustParameter MaxWindGust { get; set; }
         public HailThreatParameter HailThreat { get; set; }
+        public ThunderstormDamageParameter ThunderstormDamage { get; set; }
     }
 
     public class WindThreatParameter : WarningParameterBase
@@ -22,5 +23,10 @@ namespace SevereWeatherWarnings.Models.Display.Common
     public class HailThreatParameter : WarningParameterBase
     {
         public HailThreat DisplayValue { get; set; }
+    }
+
+    public class ThunderstormDamageParameter : WarningParameterBase
+    {
+        public ThunderstormDamage DisplayValue { get; set; }
     }
 }

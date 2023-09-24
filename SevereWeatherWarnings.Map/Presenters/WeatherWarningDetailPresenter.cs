@@ -75,6 +75,7 @@ namespace SevereWeatherWarnings.Map.Presenters
             displayWarningParameters.WindThreat = warningParameters.WindThreat != null ? MapWindThreat(warningParameters.WindThreat) : null;
             displayWarningParameters.MaxWindGust = warningParameters.MaxWindGust != null ? MapMaxWindGust(warningParameters.MaxWindGust) : null;
             displayWarningParameters.HailThreat = warningParameters.HailThreat != null ? MapHailThreat(warningParameters.HailThreat) : null;
+            displayWarningParameters.ThunderstormDamage = warningParameters.ThunderstormDamage != null ? MapThunderstormDamage(warningParameters.ThunderstormDamage) : null;
 
             return displayWarningParameters;
         }
@@ -167,6 +168,38 @@ namespace SevereWeatherWarnings.Map.Presenters
                     return "hail-threat-2";
                 default:
                     return string.Empty;
+            }
+        }
+
+        #endregion
+
+        #region Thunderstorm Damage
+
+        public ThunderstormDamageParameter MapThunderstormDamage(string[] thunderstormDamage)
+        {
+            var rawValue = thunderstormDamage;
+            var displayValue = EnumExtensions.GetEnumValueFromDescription<ThunderstormDamage>(rawValue[0]);
+            var cssClass = GetThunderstormDamageCssClass(displayValue);
+
+            return new ThunderstormDamageParameter
+            {
+                ParameterType = WarningParameterType.ThunderstormDamage,
+                RawValue = rawValue,
+                DisplayValue = displayValue,
+                CssClass = cssClass
+            };
+        }
+
+        private string GetThunderstormDamageCssClass(ThunderstormDamage thunderstormDamage)
+        {
+            switch(thunderstormDamage)
+            {
+                case ThunderstormDamage.Considerable:
+                    return "thunderstorm-damage-1";
+                case ThunderstormDamage.Destructive:
+                    return "thunderstorm-damage-2";
+                default:
+                    return "";
             }
         }
 
