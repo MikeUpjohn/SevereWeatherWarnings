@@ -236,6 +236,8 @@ html {
 
     .additional-properties span.standard-label-value {
         width: 175px;
+        border-radius:4px;
+        font-weight:normal;
     }
 
     .additional-properties span.container-label {
