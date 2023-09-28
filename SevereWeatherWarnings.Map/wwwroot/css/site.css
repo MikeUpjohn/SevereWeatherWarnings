@@ -241,6 +241,7 @@ html {
     .additional-properties span.container-label {
         width: 500px;
         display: block;
+        padding: 2px;
     }
 
     .hail-size-1 {
