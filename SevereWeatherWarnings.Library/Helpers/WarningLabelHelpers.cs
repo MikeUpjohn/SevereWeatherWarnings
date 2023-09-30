@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using SevereWeatherWarnings.Library.Extensions;
 using SevereWeatherWarnings.Models.Display.Common;
+using SevereWeatherWarnings.Models.Display.Enums;
 
 namespace SevereWeatherWarnings.Library.Helpers
 {
@@ -63,13 +64,32 @@ namespace SevereWeatherWarnings.Library.Helpers
 
         public static IHtmlContent ThunderstormDamageThreatLabel(this IHtmlHelper htmlHelper, ThunderstormDamageParameter thunderstormDamageParameter)
         {
+            //var label = new TagBuilder("span");
+            //label.MergeAttribute("class", "standard-label");
+            //label.InnerHtml.SetContent(EnumExtensions.GetDescription(thunderstormDamageParameter.ParameterType));
+
+            //var value = new TagBuilder("span");
+            //value.MergeAttribute("class", $"standard-label-value {thunderstormDamageParameter.CssClass}");
+            //value.InnerHtml.SetContent(EnumExtensions.GetDescription(thunderstormDamageParameter.DisplayValue));
+
+            //var container = new TagBuilder("span");
+            //container.MergeAttribute("class", "container-label");
+            //container.InnerHtml.AppendHtml(label.GetString());
+            //container.InnerHtml.AppendHtml(value.GetString());
+
+            //return new HtmlString(container.GetString());
+            return SevereWeatherLabel(htmlHelper, thunderstormDamageParameter.ParameterType, thunderstormDamageParameter.DisplayValue, thunderstormDamageParameter.CssClass);
+        }
+
+        private static IHtmlContent SevereWeatherLabel(this IHtmlHelper htmlHelper, WarningParameterType warningParameterType, Enum displayValue, string cssClass)
+        {
             var label = new TagBuilder("span");
             label.MergeAttribute("class", "standard-label");
-            label.InnerHtml.SetContent(EnumExtensions.GetDescription(thunderstormDamageParameter.ParameterType));
+            label.InnerHtml.SetContent(EnumExtensions.GetDescription(warningParameterType));
 
             var value = new TagBuilder("span");
-            value.MergeAttribute("class", $"standard-label-value {thunderstormDamageParameter.CssClass}");
-            value.InnerHtml.SetContent(EnumExtensions.GetDescription(thunderstormDamageParameter.DisplayValue));
+            value.MergeAttribute("class", $"standard-label-value {cssClass}");
+            value.InnerHtml.SetContent(EnumExtensions.GetDescription(displayValue));
 
             var container = new TagBuilder("span");
             container.MergeAttribute("class", "container-label");
