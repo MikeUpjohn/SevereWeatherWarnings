@@ -6,6 +6,7 @@
   --purple: #8400FF;
   --red: #FF0000;
   --yellow: #FFD800;
+  --yelloworange: #FFD000;
 }
 /* Wind Threat Labels */
 .wind-threat-1 {
@@ -50,4 +51,29 @@
 }
 .thunderstorm-damage-2 {
   background-color: var(--red);
+}
+/* Max Hail Size */
+.max-hail-size-1 {
+  background-color: var(--green);
+}
+.max-hail-size-2 {
+  background-color: var(--yellow);
+}
+.max-hail-size-3 {
+  background-color: var(--yelloworange);
+}
+.max-hail-size-4 {
+  background-color: var(--orange);
+}
+.max-hail-size-5 {
+  background-color: var(--orange-red);
+}
+.max-hail-size-6 {
+  background-color: var(--red);
+}
+.max-hail-size-7 {
+  background-color: var(--pink);
+}
+.max-hail-size-8 {
+  background-color: var(--purple);
 }

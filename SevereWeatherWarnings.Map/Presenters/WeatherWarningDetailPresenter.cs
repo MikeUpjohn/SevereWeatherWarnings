@@ -76,6 +76,7 @@ namespace SevereWeatherWarnings.Map.Presenters
             displayWarningParameters.MaxWindGust = warningParameters.MaxWindGust != null ? MapMaxWindGust(warningParameters.MaxWindGust) : null;
             displayWarningParameters.HailThreat = warningParameters.HailThreat != null ? MapHailThreat(warningParameters.HailThreat) : null;
             displayWarningParameters.ThunderstormDamage = warningParameters.ThunderstormDamage != null ? MapThunderstormDamage(warningParameters.ThunderstormDamage) : null;
+            displayWarningParameters.MaxHailSize = warningParameters.MaxHailSize != null ? MapMaxHailSize(warningParameters.MaxHailSize) : null;
 
             return displayWarningParameters;
         }
@@ -192,7 +193,7 @@ namespace SevereWeatherWarnings.Map.Presenters
 
         private string GetThunderstormDamageCssClass(ThunderstormDamage thunderstormDamage)
         {
-            switch(thunderstormDamage)
+            switch (thunderstormDamage)
             {
                 case ThunderstormDamage.Considerable:
                     return "thunderstorm-damage-1";
@@ -201,6 +202,40 @@ namespace SevereWeatherWarnings.Map.Presenters
                 default:
                     return "";
             }
+        }
+
+        #endregion
+
+        #region MaxHailSize
+
+        private static MaxHailSizeParameter MapMaxHailSize(string[] maxHailSize)
+        {
+            var rawValue = maxHailSize;
+            var displayValue = rawValue[0];
+            double.TryParse(maxHailSize[0], out double maxHailSizeValue);
+            var cssClass = GetMaxHailSizeCssClass(maxHailSizeValue);
+
+            return new MaxHailSizeParameter
+            {
+                ParameterType = WarningParameterType.MaxHailSize,
+                RawValue = rawValue,
+                DisplayValue = displayValue,
+                CssClass = cssClass
+            };
+        }
+
+        private static string GetMaxHailSizeCssClass(double maxHailSizeValue)
+        {
+            if (maxHailSizeValue > 0 && maxHailSizeValue <= 0.5) { return "max-hail-size-1"; }
+            if (maxHailSizeValue > 0.5 && maxHailSizeValue <= 1) { return "max-hail-size-2"; }
+            if (maxHailSizeValue > 1 && maxHailSizeValue <= 1.75) { return "max-hail-size-3"; }
+            if (maxHailSizeValue > 1.75 && maxHailSizeValue <= 2.25) { return "max-hail-size-4"; }
+            if (maxHailSizeValue > 2.25 && maxHailSizeValue <= 2.75) { return "max-hail-size-5"; }
+            if (maxHailSizeValue > 2.75 && maxHailSizeValue <= 3.5) { return "max-hail-size-6"; }
+            if (maxHailSizeValue > 3.5 && maxHailSizeValue <= 4.5) { return "max-hail-size-7"; }
+            if (maxHailSizeValue > 4.5) { return "max-hail-size-8"; }
+
+            return "";
         }
 
         #endregion

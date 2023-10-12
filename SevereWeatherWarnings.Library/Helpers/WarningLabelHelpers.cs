@@ -28,6 +28,11 @@ namespace SevereWeatherWarnings.Library.Helpers
             return SevereWeatherLabel(htmlHelper, thunderstormDamageParameter.ParameterType, thunderstormDamageParameter.DisplayValue, thunderstormDamageParameter.CssClass);
         }
 
+        public static IHtmlContent MaxHailSizeLabel(this IHtmlHelper htmlHelper, MaxHailSizeParameter maxHailSizeParameter)
+        {
+            return SevereWeatherLabel(htmlHelper, maxHailSizeParameter.ParameterType, maxHailSizeParameter.DisplayValue, maxHailSizeParameter.CssClass);
+        }
+
         private static IHtmlContent SevereWeatherLabel(this IHtmlHelper htmlHelper, WarningParameterType warningParameterType, Enum displayValue, string cssClass)
         {
             var label = new TagBuilder("span");

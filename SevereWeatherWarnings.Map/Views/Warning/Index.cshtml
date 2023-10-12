@@ -61,6 +61,14 @@
                             </div>
                         </div>
                     }
+                    @if (Model.WarningProperties.Parameters.MaxHailSize != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.MaxHailSizeLabel(Model.WarningProperties.Parameters.MaxHailSize)
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
