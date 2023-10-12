@@ -212,7 +212,7 @@ namespace SevereWeatherWarnings.Map.Presenters
         {
             var rawValue = maxHailSize;
             var displayValue = rawValue[0];
-            double.TryParse(maxHailSize[0], out double maxHailSizeValue);
+            double.TryParse(maxHailSize[0].Replace("Up to ", ""), out double maxHailSizeValue);
             var cssClass = GetMaxHailSizeCssClass(maxHailSizeValue);
 
             return new MaxHailSizeParameter
