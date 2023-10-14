@@ -77,3 +77,10 @@
 .max-hail-size-8 {
   background-color: var(--purple);
 }
+/* Tornado Detection */
+.tornado-detection-1 {
+  background-color: var(--orange-red);
+}
+.tornado-detection-2 {
+  background-color: var(--red);
+}

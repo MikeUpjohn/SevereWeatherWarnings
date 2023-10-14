@@ -33,6 +33,11 @@ namespace SevereWeatherWarnings.Library.Helpers
             return SevereWeatherLabel(htmlHelper, maxHailSizeParameter.ParameterType, maxHailSizeParameter.DisplayValue, maxHailSizeParameter.CssClass);
         }
 
+        public static IHtmlContent TornadoDetectionLabel(this IHtmlHelper htmlHelper, TornadoDetectionParameter tornadoDetectionParameter)
+        {
+            return SevereWeatherLabel(htmlHelper, tornadoDetectionParameter.ParameterType, tornadoDetectionParameter.DisplayValue, tornadoDetectionParameter.CssClass);
+        }
+
         private static IHtmlContent SevereWeatherLabel(this IHtmlHelper htmlHelper, WarningParameterType warningParameterType, Enum displayValue, string cssClass)
         {
             var label = new TagBuilder("span");

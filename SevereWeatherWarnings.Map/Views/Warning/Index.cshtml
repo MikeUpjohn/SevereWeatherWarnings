@@ -69,6 +69,14 @@
                             </div>
                         </div>
                     }
+                    @if (Model.WarningProperties.Parameters.TornadoDetection != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.TornadoDetectionLabel(Model.WarningProperties.Parameters.TornadoDetection)
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

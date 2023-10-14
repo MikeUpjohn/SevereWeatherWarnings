@@ -77,6 +77,7 @@ namespace SevereWeatherWarnings.Map.Presenters
             displayWarningParameters.HailThreat = warningParameters.HailThreat != null ? MapHailThreat(warningParameters.HailThreat) : null;
             displayWarningParameters.ThunderstormDamage = warningParameters.ThunderstormDamage != null ? MapThunderstormDamage(warningParameters.ThunderstormDamage) : null;
             displayWarningParameters.MaxHailSize = warningParameters.MaxHailSize != null ? MapMaxHailSize(warningParameters.MaxHailSize) : null;
+            displayWarningParameters.TornadoDetection = warningParameters.TornadoDetection != null ? MapTornadoDetection(warningParameters.TornadoDetection) : null;
 
             return displayWarningParameters;
         }
@@ -236,6 +237,38 @@ namespace SevereWeatherWarnings.Map.Presenters
             if (maxHailSizeValue > 4.5) { return "max-hail-size-8"; }
 
             return "";
+        }
+
+        #endregion
+
+        #region Tornado Detection
+
+        public TornadoDetectionParameter MapTornadoDetection(string[] tornadoDetection)
+        {
+            var rawValue = tornadoDetection;
+            var displayValue = EnumExtensions.GetEnumValueFromDescription<TornadoDetection>(rawValue[0]);
+            var cssClass = GetTornadoDetectionCssClass(displayValue);
+
+            return new TornadoDetectionParameter
+            {
+                ParameterType = WarningParameterType.TornadoDetection,
+                RawValue = rawValue,
+                DisplayValue = displayValue,
+                CssClass = cssClass
+            };
+        }
+
+        private static string GetTornadoDetectionCssClass(TornadoDetection tornadoDetection)
+        {
+            switch (tornadoDetection)
+            {
+                case TornadoDetection.RadarIndicated:
+                    return "tornado-detection-1";
+                case TornadoDetection.Observed:
+                    return "tornado-detection-2";
+                default:
+                    return "";
+            }
         }
 
         #endregion
