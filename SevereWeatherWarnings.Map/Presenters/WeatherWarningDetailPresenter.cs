@@ -8,6 +8,7 @@ using DisplayWarningProperties = SevereWeatherWarnings.Models.Display.Common.War
 using APIWarningParameters = SevereWeatherWarnings.Models.API.WarningParameters;
 using DisplayWarningParameters = SevereWeatherWarnings.Models.Display.Common.WarningParameters;
 using SevereWeatherWarnings.Models.Display.Enums;
+using SevereWeatherWarnings.Models.Enums;
 
 namespace SevereWeatherWarnings.Map.Presenters
 {
@@ -63,13 +64,13 @@ namespace SevereWeatherWarnings.Map.Presenters
                 Description = warningProperties.Description,
                 Instruction = warningProperties.Instruction,
                 Response = warningProperties.Response,
-                Parameters = MapWarningParameters(warningProperties.Parameters)
+                Parameters = MapWarningParameters(warningProperties.Parameters, warningProperties.EventType.Value)
             };
 
             return displayWarningProperties;
         }
 
-        private DisplayWarningParameters MapWarningParameters(APIWarningParameters warningParameters)
+        private DisplayWarningParameters MapWarningParameters(APIWarningParameters warningParameters, Event eventType)
         {
             DisplayWarningParameters displayWarningParameters = new DisplayWarningParameters();
             displayWarningParameters.WindThreat = warningParameters.WindThreat != null ? MapWindThreat(warningParameters.WindThreat) : null;
@@ -77,7 +78,7 @@ namespace SevereWeatherWarnings.Map.Presenters
             displayWarningParameters.HailThreat = warningParameters.HailThreat != null ? MapHailThreat(warningParameters.HailThreat) : null;
             displayWarningParameters.ThunderstormDamage = warningParameters.ThunderstormDamage != null ? MapThunderstormDamage(warningParameters.ThunderstormDamage) : null;
             displayWarningParameters.MaxHailSize = warningParameters.MaxHailSize != null ? MapMaxHailSize(warningParameters.MaxHailSize) : null;
-            displayWarningParameters.TornadoDetection = warningParameters.TornadoDetection != null ? MapTornadoDetection(warningParameters.TornadoDetection) : null;
+            displayWarningParameters.TornadoDetection = warningParameters.TornadoDetection != null ? MapTornadoDetection(warningParameters.TornadoDetection, eventType) : null;
 
             return displayWarningParameters;
         }
@@ -243,11 +244,11 @@ namespace SevereWeatherWarnings.Map.Presenters
 
         #region Tornado Detection
 
-        public TornadoDetectionParameter MapTornadoDetection(string[] tornadoDetection)
+        public TornadoDetectionParameter MapTornadoDetection(string[] tornadoDetection, Event eventType)
         {
             var rawValue = tornadoDetection;
             var displayValue = EnumExtensions.GetEnumValueFromDescription<TornadoDetection>(rawValue[0]);
-            var cssClass = GetTornadoDetectionCssClass(displayValue);
+            var cssClass = GetTornadoDetectionCssClass(displayValue, eventType);
 
             return new TornadoDetectionParameter
             {
@@ -258,8 +259,10 @@ namespace SevereWeatherWarnings.Map.Presenters
             };
         }
 
-        private static string GetTornadoDetectionCssClass(TornadoDetection tornadoDetection)
+        private static string GetTornadoDetectionCssClass(TornadoDetection tornadoDetection, Event eventType)
         {
+            if (eventType == Event.SevereThunderstormWarning) { return "tornado-detection-3"; }
+
             switch (tornadoDetection)
             {
                 case TornadoDetection.RadarIndicated:

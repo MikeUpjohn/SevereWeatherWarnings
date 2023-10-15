@@ -8,6 +8,9 @@ namespace SevereWeatherWarnings.Models.Display.Enums
         RadarIndicated = 1,
 
         [Description("OBSERVED")]
-        Observed = 2
+        Observed = 2,
+
+        [Description("POSSIBLE")]
+        Possible = 3
     }
 }
