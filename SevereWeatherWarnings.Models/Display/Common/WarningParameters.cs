@@ -10,6 +10,7 @@ namespace SevereWeatherWarnings.Models.Display.Common
         public ThunderstormDamageParameter ThunderstormDamage { get; set; }
         public MaxHailSizeParameter MaxHailSize { get; set; }
         public TornadoDetectionParameter TornadoDetection { get; set; }
+        public TornadoDamageThreatParameter TornadoDamageThreat { get; set; }
     }
 
     public class WindThreatParameter : WarningParameterBase
@@ -40,5 +41,10 @@ namespace SevereWeatherWarnings.Models.Display.Common
     public class TornadoDetectionParameter : WarningParameterBase
     {
         public TornadoDetection DisplayValue { get; set; }
+    }
+
+    public class TornadoDamageThreatParameter : WarningParameterBase
+    {
+        public TornadoDamageThreat DisplayValue { get; set; }
     }
 }

@@ -79,6 +79,7 @@ namespace SevereWeatherWarnings.Map.Presenters
             displayWarningParameters.ThunderstormDamage = warningParameters.ThunderstormDamage != null ? MapThunderstormDamage(warningParameters.ThunderstormDamage) : null;
             displayWarningParameters.MaxHailSize = warningParameters.MaxHailSize != null ? MapMaxHailSize(warningParameters.MaxHailSize) : null;
             displayWarningParameters.TornadoDetection = warningParameters.TornadoDetection != null ? MapTornadoDetection(warningParameters.TornadoDetection, eventType) : null;
+            displayWarningParameters.TornadoDamageThreat = warningParameters.TornadoDamageThreat != null ? MapTornadoDamageThreat(warningParameters.TornadoDamageThreat) : null;
 
             return displayWarningParameters;
         }
@@ -269,6 +270,38 @@ namespace SevereWeatherWarnings.Map.Presenters
                     return "tornado-detection-1";
                 case TornadoDetection.Observed:
                     return "tornado-detection-2";
+                default:
+                    return "";
+            }
+        }
+
+        #endregion
+
+        #region Tornado Damage Threat
+
+        public TornadoDamageThreatParameter MapTornadoDamageThreat(string[] tornadoDamageThreat)
+        {
+            var rawValue = tornadoDamageThreat;
+            var displayValue = EnumExtensions.GetEnumValueFromDescription<TornadoDamageThreat>(rawValue[0]);
+            var cssClass = GetTornadoDamageThreatCssClass(displayValue);
+
+            return new TornadoDamageThreatParameter
+            {
+                ParameterType = WarningParameterType.TornadoDamageThreat,
+                RawValue = rawValue,
+                DisplayValue = displayValue,
+                CssClass = cssClass
+            };
+        }
+
+        private string GetTornadoDamageThreatCssClass(TornadoDamageThreat displayValue)
+        {
+            switch (displayValue)
+            {
+                case TornadoDamageThreat.Considerable:
+                    return "tornado-damage-threat-1";
+                case TornadoDamageThreat.Catastrophic:
+                    return "tornado-damage-threat-2";
                 default:
                     return "";
             }

@@ -38,6 +38,11 @@ namespace SevereWeatherWarnings.Library.Helpers
             return SevereWeatherLabel(htmlHelper, tornadoDetectionParameter.ParameterType, tornadoDetectionParameter.DisplayValue, tornadoDetectionParameter.CssClass);
         }
 
+        public static IHtmlContent TornadoDamageThreatLabel(this IHtmlHelper htmlHelper, TornadoDamageThreatParameter tornadoDamangeThreatParameter)
+        {
+            return SevereWeatherLabel(htmlHelper, tornadoDamangeThreatParameter.ParameterType, tornadoDamangeThreatParameter.DisplayValue, tornadoDamangeThreatParameter.CssClass);
+        }
+
         private static IHtmlContent SevereWeatherLabel(this IHtmlHelper htmlHelper, WarningParameterType warningParameterType, Enum displayValue, string cssClass)
         {
             var label = new TagBuilder("span");
