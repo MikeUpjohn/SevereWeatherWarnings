@@ -21,6 +21,8 @@ namespace SevereWeatherWarnings.Models.Display.Enums
 
         [Description("Tornado Detection")]
         TornadoDetection = 6,
+
+        [Description("Tornado Damage Threat")]
         TornadoDamageThreat = 7,
         FlashFloodDetection = 8,
         FlashFloodDamage = 9,
