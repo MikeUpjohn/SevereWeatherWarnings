@@ -92,3 +92,13 @@
 .tornado-damage-threat-2 {
   background-color: var(--pink);
 }
+/* Flash Flood Detection */
+.flash-flood-detection-1 {
+  background-color: var(--yellow);
+}
+.flash-flood-detection-2 {
+  background-color: var(--orange);
+}
+.flash-flood-detection-3 {
+  background-color: var(--red);
+}

@@ -85,6 +85,14 @@
                             </div>
                         </div>
                     }
+                    @if(Model.WarningProperties.Parameters.FlashFloodDetection != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.FlashFloodDetectionLabel(Model.WarningProperties.Parameters.FlashFloodDetection)
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

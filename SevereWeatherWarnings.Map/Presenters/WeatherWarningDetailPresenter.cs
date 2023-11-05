@@ -80,6 +80,7 @@ namespace SevereWeatherWarnings.Map.Presenters
             displayWarningParameters.MaxHailSize = warningParameters.MaxHailSize != null ? MapMaxHailSize(warningParameters.MaxHailSize) : null;
             displayWarningParameters.TornadoDetection = warningParameters.TornadoDetection != null ? MapTornadoDetection(warningParameters.TornadoDetection, eventType) : null;
             displayWarningParameters.TornadoDamageThreat = warningParameters.TornadoDamageThreat != null ? MapTornadoDamageThreat(warningParameters.TornadoDamageThreat) : null;
+            displayWarningParameters.FlashFloodDetection = warningParameters.FlashFloodDetection != null ? MapFlashFloodDetection(warningParameters.FlashFloodDetection) : null;
 
             return displayWarningParameters;
         }
@@ -302,6 +303,39 @@ namespace SevereWeatherWarnings.Map.Presenters
                     return "tornado-damage-threat-1";
                 case TornadoDamageThreat.Catastrophic:
                     return "tornado-damage-threat-2";
+                default:
+                    return "";
+            }
+        }
+
+        #endregion
+
+        #region Flash Flood Detection
+        public FlashFloodDetectionParameter MapFlashFloodDetection(string[] flashFloodDetection)
+        {
+            var rawValue = flashFloodDetection;
+            var displayValue = EnumExtensions.GetEnumValueFromDescription<FlashFloodDetection>(rawValue[0]);
+            var cssClass = GetFlashFloodDetectionCssClass(displayValue);
+
+            return new FlashFloodDetectionParameter
+            {
+                ParameterType = WarningParameterType.FlashFloodDetection,
+                RawValue = rawValue,
+                DisplayValue = displayValue,
+                CssClass = cssClass
+            };
+        }
+
+        private string GetFlashFloodDetectionCssClass(FlashFloodDetection displayValue)
+        {
+            switch (displayValue)
+            {
+                case FlashFloodDetection.RadarIndicated:
+                    return "flash-flood-detection-1";
+                case FlashFloodDetection.RadarAndGaugeIndicated:
+                    return "flash-flood-detection-2";
+                case FlashFloodDetection.Observed:
+                    return "flash-flood-detection-3";
                 default:
                     return "";
             }
