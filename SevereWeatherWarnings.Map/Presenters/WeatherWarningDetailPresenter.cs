@@ -81,6 +81,7 @@ namespace SevereWeatherWarnings.Map.Presenters
             displayWarningParameters.TornadoDetection = warningParameters.TornadoDetection != null ? MapTornadoDetection(warningParameters.TornadoDetection, eventType) : null;
             displayWarningParameters.TornadoDamageThreat = warningParameters.TornadoDamageThreat != null ? MapTornadoDamageThreat(warningParameters.TornadoDamageThreat) : null;
             displayWarningParameters.FlashFloodDetection = warningParameters.FlashFloodDetection != null ? MapFlashFloodDetection(warningParameters.FlashFloodDetection) : null;
+            displayWarningParameters.FlashFloodDamageThreat = warningParameters.FlashFloodDamageThreat != null ? MapFlashFloodDamageThreat(warningParameters.FlashFloodDamageThreat) : null;
 
             return displayWarningParameters;
         }
@@ -336,6 +337,38 @@ namespace SevereWeatherWarnings.Map.Presenters
                     return "flash-flood-detection-2";
                 case FlashFloodDetection.Observed:
                     return "flash-flood-detection-3";
+                default:
+                    return "";
+            }
+        }
+
+        #endregion
+
+        #region Flash Flood Damage Threat
+
+        public FlashFloodDamageThreatParameter MapFlashFloodDamageThreat(string[] flashFloodDamageThreat)
+        {
+            var rawValue = flashFloodDamageThreat;
+            var displayValue = EnumExtensions.GetEnumValueFromDescription<FlashFloodDamageThreat>(rawValue[0]);
+            var cssClass = GetFlashFloodDamageThreatCssClass(displayValue);
+
+            return new FlashFloodDamageThreatParameter
+            {
+                ParameterType = WarningParameterType.FlashFloodDamageThreat,
+                RawValue = rawValue,
+                DisplayValue = displayValue,
+                CssClass = cssClass
+            };
+        }
+
+        private string GetFlashFloodDamageThreatCssClass(FlashFloodDamageThreat displayValue)
+        {
+            switch (displayValue)
+            {
+                case FlashFloodDamageThreat.Considerable:
+                    return "flash-flood-damage-threat-1";
+                case FlashFloodDamageThreat.Catastrophic:
+                    return "flash-flood-damage-threat-2";
                 default:
                     return "";
             }

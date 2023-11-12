@@ -102,3 +102,10 @@
 .flash-flood-detection-3 {
   background-color: var(--red);
 }
+/* Flash Flood Damage Threat */
+.flash-flood-damage-threat-1 {
+  background-color: var(--orange);
+}
+.flash-flood-damage-threat-2 {
+  background-color: var(--red);
+}

@@ -129,8 +129,8 @@ namespace SevereWeatherWarnings.Models.API
         [JsonProperty("flashFloodDetection")]
         public string[] FlashFloodDetection { get; set; }
 
-        [JsonProperty("flashFloodDamage")]
-        public string[] FlashFloodDamange { get; set; }
+        [JsonProperty("flashFloodDamageThreat")]
+        public string[] FlashFloodDamageThreat { get; set; }
 
         [JsonProperty("snowSquallDetection")]
         public string[] SnowSquallDetection { get; set; }

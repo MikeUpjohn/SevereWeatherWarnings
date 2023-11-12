@@ -27,7 +27,9 @@ namespace SevereWeatherWarnings.Models.Display.Enums
 
         [Description("Flash Flood Detection")]
         FlashFloodDetection = 8,
-        FlashFloodDamage = 9,
+
+        [Description("Flash Flood Damage Threat")]
+        FlashFloodDamageThreat = 9,
         SnowSquallDetection = 10,
         SnowSquallImpact = 11,
         WaterspoutDetection = 12
