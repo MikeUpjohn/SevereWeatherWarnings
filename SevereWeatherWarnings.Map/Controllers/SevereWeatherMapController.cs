@@ -17,8 +17,11 @@ namespace SevereWeatherWarnings.Map.Controllers
 
         public IActionResult Index()
         {
+            var isWarningDetailPageOn = bool.Parse(_configuration["FeatureToggles:WarningDetailsPage"]);
             ViewData["MapBoxConnectionString"] = _configuration["Settings:MapBoxToken"];
             ViewData["IsTestingMode"] = bool.Parse(_configuration["Settings:IsTestingMode"]);
+            ViewData["MainClass"] = "main-map";
+            ViewData["IsWarningDetailPageOn"] = isWarningDetailPageOn;
 
             return View();
         }

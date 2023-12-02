@@ -84,6 +84,9 @@ namespace SevereWeatherWarnings.Models.API
 
         public Event? EventType { get; set; }
 
+        [JsonProperty("senderName")]
+        public string SenderName { get; set; }
+
         [JsonProperty("headline")]
         public string Headline { get; set; }
 
@@ -95,5 +98,47 @@ namespace SevereWeatherWarnings.Models.API
 
         [JsonProperty("response")]
         public Response Response { get; set; }
+
+        [JsonProperty("parameters")]
+        public WarningParameters Parameters { get; set; }
+    }
+
+    public class WarningParameters
+    {
+        [JsonProperty("windThreat")]
+        public string[] WindThreat { get; set; }
+
+        [JsonProperty("maxWindGust")]
+        public string[] MaxWindGust { get; set; }
+
+        [JsonProperty("hailThreat")]
+        public string[] HailThreat { get; set; }
+
+        [JsonProperty("maxHailSize")]
+        public string[] MaxHailSize { get; set; }
+
+        [JsonProperty("thunderstormDamage")]
+        public string[] ThunderstormDamage { get; set; }
+
+        [JsonProperty("tornadoDetection")]
+        public string[] TornadoDetection { get; set; }
+
+        [JsonProperty("tornadoDamageThreat")]
+        public string[] TornadoDamageThreat { get; set; }
+
+        [JsonProperty("flashFloodDetection")]
+        public string[] FlashFloodDetection { get; set; }
+
+        [JsonProperty("flashFloodDamageThreat")]
+        public string[] FlashFloodDamageThreat { get; set; }
+
+        [JsonProperty("snowSquallDetection")]
+        public string[] SnowSquallDetection { get; set; }
+
+        [JsonProperty("snowSquallImpact")]
+        public string[] SnowSquallImpact { get; set; }
+
+        [JsonProperty("waterspoutDetection")]
+        public string[] WaterspoutDetection { get; set; }
     }
 }

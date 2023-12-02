@@ -52,7 +52,7 @@ function loadWarnings() {
         sourcesToAdd = [];
         sourcesToDelete = [];
 
-        $.post("/RetrieveData/GetData", request, function (data) {
+        $.post("/RetrieveData/GetAllLiveWarnings", request, function (data) {
             mapNewData(data);
 
             let existsInNewSourceData;
@@ -100,8 +100,8 @@ function addWarningsToMap(sourcesToAdd) {
 
 function drawWarningPolygon(dataItem) {
     addDataSourceToMap(dataItem);
-    drawPolygon(dataItem.id, dataItem.displayProperties.fillColourHexCode, 0.3);
-    drawPolygonBorder(dataItem.id, dataItem.displayProperties.lineColourHexCode, 0.3);
+    drawPolygon(dataItem.friendlyId, dataItem.displayProperties.fillColourHexCode, 0.3);
+    drawPolygonBorder(dataItem.friendlyId, dataItem.displayProperties.lineColourHexCode, 0.3);
 }
 
 function removeWarningsFromMap(sourcesToDelete) {
@@ -165,3 +165,7 @@ setInterval(function () {
 
     console.log("refreshing map after 1 minute");
 }, 60000);
+
+if ($('.warning-details').length) {
+    $(".warning-details").css("height", ($(window).innerHeight() - $(".warning-banner").innerHeight()) + "px");
+}

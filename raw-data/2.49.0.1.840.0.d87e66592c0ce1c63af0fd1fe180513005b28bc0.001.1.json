@@ -1,0 +1,140 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d87e66592c0ce1c63af0fd1fe180513005b28bc0.001.1",
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -94,
+                    37.240000000000002
+                ],
+                [
+                    -93.599999999999994,
+                    37.5
+                ],
+                [
+                    -93.179999999999993,
+                    37.43
+                ],
+                [
+                    -93.179999999999993,
+                    37.420000000000002
+                ],
+                [
+                    -93.109999999999999,
+                    37.420000000000002
+                ],
+                [
+                    -93.079999999999998,
+                    37.409999900000003
+                ],
+                [
+                    -93.079999999999998,
+                    37.400000000000006
+                ],
+                [
+                    -93.840000000000003,
+                    37.080000000000005
+                ],
+                [
+                    -94,
+                    37.240000000000002
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d87e66592c0ce1c63af0fd1fe180513005b28bc0.001.1",
+        "@type": "wx:Alert",
+        "id": "urn:oid:2.49.0.1.840.0.d87e66592c0ce1c63af0fd1fe180513005b28bc0.001.1",
+        "areaDesc": "Dade, MO; Greene, MO; Lawrence, MO; Polk, MO",
+        "geocode": {
+            "SAME": [
+                "029057",
+                "029077",
+                "029109",
+                "029167"
+            ],
+            "UGC": [
+                "MOC057",
+                "MOC077",
+                "MOC109",
+                "MOC167"
+            ]
+        },
+        "affectedZones": [
+            "https://api.weather.gov/zones/county/MOC057",
+            "https://api.weather.gov/zones/county/MOC077",
+            "https://api.weather.gov/zones/county/MOC109",
+            "https://api.weather.gov/zones/county/MOC167"
+        ],
+        "references": [],
+        "sent": "2023-02-27T01:42:00-06:00",
+        "effective": "2023-02-27T01:42:00-06:00",
+        "onset": "2023-02-27T01:42:00-06:00",
+        "expires": "2023-02-27T02:15:00-06:00",
+        "ends": "2023-02-27T02:15:00-06:00",
+        "status": "Actual",
+        "messageType": "Alert",
+        "category": "Met",
+        "severity": "Severe",
+        "certainty": "Observed",
+        "urgency": "Immediate",
+        "event": "Severe Thunderstorm Warning",
+        "sender": "w-nws.webmaster@noaa.gov",
+        "senderName": "NWS Springfield MO",
+        "headline": "Severe Thunderstorm Warning issued February 27 at 1:42AM CST until February 27 at 2:15AM CST by NWS Springfield MO",
+        "description": "The National Weather Service in Springfield has issued a\n\n* Severe Thunderstorm Warning for...\nSouthern Polk County in southwestern Missouri...\nNorthern Lawrence County in southwestern Missouri...\nNorthern Greene County in southwestern Missouri...\nSoutheastern Dade County in southwestern Missouri...\n\n* Until 215 AM CST.\n\n* At 141 AM CST, severe thunderstorms were located along a line\nextending from 11 miles south of Lockwood to near Miller to near\nMount Vernon, moving northeast at 60 mph.\n\nHAZARD...60 mph wind gusts.\n\nSOURCE...Radar indicated.\n\nIMPACT...Expect damage to roofs, siding, and trees.\n\n* Locations impacted include...\nWillard, Mount Vernon, Ash Grove, Fair Grove, Miller, Walnut Grove,\nEverton, Halltown, Sacville, Glidewell, Ebenezer, Brighton, Bois\nD'arc, Cave Springs, Eudora and Pennsboro.\n\nThis includes Interstate 44 between mile markers 44 and 60.",
+        "instruction": "For your protection move to an interior room on the lowest floor of a\nbuilding.",
+        "response": "Shelter",
+        "parameters": {
+            "AWIPSidentifier": [
+                "SVRSGF"
+            ],
+            "WMOidentifier": [
+                "WUUS53 KSGF 270742"
+            ],
+            "eventMotionDescription": [
+                "2023-02-27T07:41:00-00:00...storm...229DEG...53KT...37.23,-93.89 37.18,-93.82 37.11,-93.78"
+            ],
+            "windThreat": [
+                "RADAR INDICATED"
+            ],
+            "maxWindGust": [
+                "60 MPH"
+            ],
+            "hailThreat": [
+                "RADAR INDICATED"
+            ],
+            "maxHailSize": [
+                "Up to .75"
+            ],
+            "tornadoDetection": [
+                "POSSIBLE"
+            ],
+            "BLOCKCHANNEL": [
+                "EAS",
+                "NWEM",
+                "CMAS"
+            ],
+            "EAS-ORG": [
+                "WXR"
+            ],
+            "VTEC": [
+                "/O.NEW.KSGF.SV.W.0013.230227T0742Z-230227T0815Z/"
+            ],
+            "eventEndingTime": [
+                "2023-02-27T08:15:00+00:00"
+            ]
+        }
+    }
+}

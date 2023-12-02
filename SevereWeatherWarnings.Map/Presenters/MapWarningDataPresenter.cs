@@ -3,9 +3,10 @@ using SevereWeatherWarnings.Models.API;
 using SevereWeatherWarnings.Models.Display;
 using APIWeatherWarning = SevereWeatherWarnings.Models.API.WeatherWarning;
 using DisplayWeatherWarning = SevereWeatherWarnings.Models.Display.WeatherWarning;
-using DisplayGeometry = SevereWeatherWarnings.Models.Display.Geometry;
-using DisplayWarningProperties = SevereWeatherWarnings.Models.Display.WarningProperties;
+using DisplayGeometry = SevereWeatherWarnings.Models.Display.Common.Geometry;
+using DisplayWarningProperties = SevereWeatherWarnings.Models.Display.Common.WarningProperties;
 using SevereWeatherWarnings.Library.Extensions;
+using SevereWeatherWarnings.Models.Display.Common;
 
 namespace SevereWeatherWarnings.Map.Presenters
 {
@@ -34,6 +35,7 @@ namespace SevereWeatherWarnings.Map.Presenters
                 var displayWeatherWarning = new DisplayWeatherWarning
                 {
                     Id = apiWeatherWarning.Id,
+                    FriendlyId = MapFriendlyId(apiWeatherWarning),
                     Type = apiWeatherWarning.Type,
                     WarningGeometry = MapWarningGeometry(apiWeatherWarning),
                     WarningProperties = MapWarningProperties(apiWeatherWarning),
@@ -42,6 +44,11 @@ namespace SevereWeatherWarnings.Map.Presenters
 
                 viewModel.WeatherWarnings.Add(displayWeatherWarning);
             };
+        }
+
+        private static string MapFriendlyId(APIWeatherWarning apiWeatherWarning)
+        {
+            return apiWeatherWarning.Id.Replace("https://api.weather.gov/alerts/urn:oid:", "");
         }
 
         private DisplayGeometry MapWarningGeometry(APIWeatherWarning weatherWarning)

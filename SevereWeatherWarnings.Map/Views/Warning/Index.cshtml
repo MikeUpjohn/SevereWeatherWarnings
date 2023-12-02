@@ -1,0 +1,108 @@
+﻿@using SevereWeatherWarnings.Library.Helpers
+
+@model SevereWeatherWarnings.Models.Display.WeatherWarningDetailsViewModel;
+<div class="row g-0">
+    <div class="col-md-6">
+        <div class="map-window">
+            <div class="text-center">
+                <div id='map' data-accesstoken="@ViewData["MapBoxConnectionString"]"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="warning-details">
+            <h1 class="@Model.WeatherWarningClassFor(Model.WarningProperties.EventType)">@Model.WarningProperties.Event</h1>
+            <h2>@Model.WarningProperties.AreaDescription</h2>
+            <br />
+            <h3>@Model.WarningProperties.Headline</h3>
+            <br />
+            <div class="warning-detail-content">
+                <div class="row g-0">
+                    <p class="main-description">@Html.Raw(Model.WarningProperties.Description.Replace("\n", "<br />"))</p>
+                </div>
+                <div class="row g-0">
+                    <p class="main-description">@Html.Raw(Model.WarningProperties.Instruction.Replace("\n", "<br />"))</p>
+                </div>
+                <div class="row g-0">
+                    <p class="main-description">@Html.Raw(Model.WarningProperties.Instruction.Replace("\n", "<br />"))</p>
+                </div>
+                <br />
+                <h3>More Details</h3>
+                <div class="additional-properties">
+                    @if (Model.WarningProperties.Parameters.WindThreat != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.WindThreatLabel(Model.WarningProperties.Parameters.WindThreat)
+                            </div>
+                        </div>
+                    }
+                    @if (Model.WarningProperties.Parameters.MaxWindGust != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.MaxWindGustLabel(Model.WarningProperties.Parameters.MaxWindGust)
+                            </div>
+                        </div>
+                    }
+                    @if (Model.WarningProperties.Parameters.HailThreat != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.HailThreatLabel(Model.WarningProperties.Parameters.HailThreat)
+                            </div>
+                        </div>
+                    }
+                    @if (Model.WarningProperties.Parameters.ThunderstormDamage != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.ThunderstormDamageThreatLabel(Model.WarningProperties.Parameters.ThunderstormDamage)
+                            </div>
+                        </div>
+                    }
+                    @if (Model.WarningProperties.Parameters.MaxHailSize != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.MaxHailSizeLabel(Model.WarningProperties.Parameters.MaxHailSize)
+                            </div>
+                        </div>
+                    }
+                    @if (Model.WarningProperties.Parameters.TornadoDetection != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.TornadoDetectionLabel(Model.WarningProperties.Parameters.TornadoDetection)
+                            </div>
+                        </div>
+                    }
+                    @if (Model.WarningProperties.Parameters.TornadoDamageThreat != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.TornadoDamageThreatLabel(Model.WarningProperties.Parameters.TornadoDamageThreat)
+                            </div>
+                        </div>
+                    }
+                    @if (Model.WarningProperties.Parameters.FlashFloodDetection != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.FlashFloodDetectionLabel(Model.WarningProperties.Parameters.FlashFloodDetection)
+                            </div>
+                        </div>
+                    }
+                    @if (Model.WarningProperties.Parameters.FlashFloodDamageThreat != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                @Html.FlashFloodDamageThreatLabel(Model.WarningProperties.Parameters.FlashFloodDamageThreat)
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,149 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cac13c6b9970299b8a8b4c92aaa6ccc6b36befd2.001.1",
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -94.2099999,
+                    40.329999999999998
+                ],
+                [
+                    -94.2099999,
+                    40.219999999999999
+                ],
+                [
+                    -94.269999999999996,
+                    39.850000000000001
+                ],
+                [
+                    -94.789999999999992,
+                    39.57
+                ],
+                [
+                    -94.749999999999986,
+                    40.109999999999999
+                ],
+                [
+                    -94.839999999999989,
+                    40.32
+                ],
+                [
+                    -94.689999999999984,
+                    40.57
+                ],
+                [
+                    -94.299999999999983,
+                    40.57
+                ],
+                [
+                    -94.2099999,
+                    40.329999999999998
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cac13c6b9970299b8a8b4c92aaa6ccc6b36befd2.001.1",
+        "@type": "wx:Alert",
+        "id": "urn:oid:2.49.0.1.840.0.cac13c6b9970299b8a8b4c92aaa6ccc6b36befd2.001.1",
+        "areaDesc": "Andrew, MO; Buchanan, MO; Clinton, MO; DeKalb, MO; Gentry, MO; Nodaway, MO; Worth, MO",
+        "geocode": {
+            "SAME": [
+                "029003",
+                "029021",
+                "029049",
+                "029063",
+                "029075",
+                "029147",
+                "029227"
+            ],
+            "UGC": [
+                "MOC003",
+                "MOC021",
+                "MOC049",
+                "MOC063",
+                "MOC075",
+                "MOC147",
+                "MOC227"
+            ]
+        },
+        "affectedZones": [
+            "https://api.weather.gov/zones/county/MOC003",
+            "https://api.weather.gov/zones/county/MOC021",
+            "https://api.weather.gov/zones/county/MOC049",
+            "https://api.weather.gov/zones/county/MOC063",
+            "https://api.weather.gov/zones/county/MOC075",
+            "https://api.weather.gov/zones/county/MOC147",
+            "https://api.weather.gov/zones/county/MOC227"
+        ],
+        "references": [],
+        "sent": "2023-02-27T01:44:00-06:00",
+        "effective": "2023-02-27T01:44:00-06:00",
+        "onset": "2023-02-27T01:44:00-06:00",
+        "expires": "2023-02-27T02:30:00-06:00",
+        "ends": "2023-02-27T02:30:00-06:00",
+        "status": "Actual",
+        "messageType": "Alert",
+        "category": "Met",
+        "severity": "Severe",
+        "certainty": "Observed",
+        "urgency": "Immediate",
+        "event": "Severe Thunderstorm Warning",
+        "sender": "w-nws.webmaster@noaa.gov",
+        "senderName": "NWS Kansas City/Pleasant Hill MO",
+        "headline": "Severe Thunderstorm Warning issued February 27 at 1:44AM CST until February 27 at 2:30AM CST by NWS Kansas City/Pleasant Hill MO",
+        "description": "The National Weather Service in Pleasant Hill has issued a\n\n* Severe Thunderstorm Warning for...\nEastern Buchanan County in northwestern Missouri...\nWorth County in northwestern Missouri...\nNorthwestern Clinton County in northwestern Missouri...\nGentry County in northwestern Missouri...\nEastern Nodaway County in northwestern Missouri...\nEastern Andrew County in northwestern Missouri...\nDeKalb County in northwestern Missouri...\n\n* Until 230 AM CST.\n\n* At 144 AM CST, severe thunderstorms were located along a line\nextending from Ravenwood to 6 miles northwest of King City to\nAgency, moving northeast at 65 mph.\n\nHAZARD...60 mph wind gusts.\n\nSOURCE...Radar indicated.\n\nIMPACT...Expect damage to roofs, siding, and trees.\n\n* Locations impacted include...\nSt. Joseph, Albany, Stanberry, Maysville, King City, Grant City,\nStewartsville, Agency, Ravenwood, Union Star, Clarksdale, Irena,\nEaston, Conception Junction, Sheridan, Parnell, Cosby, Darlington,\nMcfall and Guilford.\n\nThis includes Interstate 29 near mile marker 34.",
+        "instruction": "For your protection move to an interior room on the lowest floor of a\nbuilding.",
+        "response": "Shelter",
+        "parameters": {
+            "AWIPSidentifier": [
+                "SVREAX"
+            ],
+            "WMOidentifier": [
+                "WUUS53 KEAX 270744"
+            ],
+            "eventMotionDescription": [
+                "2023-02-27T07:44:00-00:00...storm...214DEG...55KT...40.34,-94.7 40.12,-94.61 39.63,-94.74"
+            ],
+            "windThreat": [
+                "RADAR INDICATED"
+            ],
+            "maxWindGust": [
+                "60 MPH"
+            ],
+            "hailThreat": [
+                "RADAR INDICATED"
+            ],
+            "maxHailSize": [
+                "Up to .75"
+            ],
+            "tornadoDetection": [
+                "POSSIBLE"
+            ],
+            "BLOCKCHANNEL": [
+                "EAS",
+                "NWEM",
+                "CMAS"
+            ],
+            "EAS-ORG": [
+                "WXR"
+            ],
+            "VTEC": [
+                "/O.NEW.KEAX.SV.W.0004.230227T0744Z-230227T0830Z/"
+            ],
+            "eventEndingTime": [
+                "2023-02-27T08:30:00+00:00"
+            ]
+        }
+    }
+}

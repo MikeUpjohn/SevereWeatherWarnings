@@ -1,0 +1,134 @@
+{
+    "@context": [
+        "https://geojson.org/geojson-ld/geojson-context.jsonld",
+        {
+            "@version": "1.1",
+            "wx": "https://api.weather.gov/ontology#",
+            "@vocab": "https://api.weather.gov/ontology#"
+        }
+    ],
+    "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.03626fedf60b7d2c1029968bf73c94fdc93259e9.001.1",
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -93.510000000000005,
+                    38.210000000000001
+                ],
+                [
+                    -93.5,
+                    38.200000000000003
+                ],
+                [
+                    -93.510000000000005,
+                    37.940000000000005
+                ],
+                [
+                    -94.069999899999999,
+                    37.640000000000008
+                ],
+                [
+                    -94.060000000000002,
+                    38.000000000000007
+                ],
+                [
+                    -93.780000000000001,
+                    38.210000000000008
+                ],
+                [
+                    -93.560000000000002,
+                    38.20000000000001
+                ],
+                [
+                    -93.569999899999999,
+                    38.220000000000013
+                ],
+                [
+                    -93.510000000000005,
+                    38.210000000000001
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.03626fedf60b7d2c1029968bf73c94fdc93259e9.001.1",
+        "@type": "wx:Alert",
+        "id": "urn:oid:2.49.0.1.840.0.03626fedf60b7d2c1029968bf73c94fdc93259e9.001.1",
+        "areaDesc": "Cedar, MO; St. Clair, MO",
+        "geocode": {
+            "SAME": [
+                "029039",
+                "029185"
+            ],
+            "UGC": [
+                "MOC039",
+                "MOC185"
+            ]
+        },
+        "affectedZones": [
+            "https://api.weather.gov/zones/county/MOC039",
+            "https://api.weather.gov/zones/county/MOC185"
+        ],
+        "references": [],
+        "sent": "2023-02-27T01:36:00-06:00",
+        "effective": "2023-02-27T01:36:00-06:00",
+        "onset": "2023-02-27T01:36:00-06:00",
+        "expires": "2023-02-27T02:15:00-06:00",
+        "ends": "2023-02-27T02:15:00-06:00",
+        "status": "Actual",
+        "messageType": "Alert",
+        "category": "Met",
+        "severity": "Severe",
+        "certainty": "Observed",
+        "urgency": "Immediate",
+        "event": "Severe Thunderstorm Warning",
+        "sender": "w-nws.webmaster@noaa.gov",
+        "senderName": "NWS Springfield MO",
+        "headline": "Severe Thunderstorm Warning issued February 27 at 1:36AM CST until February 27 at 2:15AM CST by NWS Springfield MO",
+        "description": "The National Weather Service in Springfield has issued a\n\n* Severe Thunderstorm Warning for...\nNorthern Cedar County in southwestern Missouri...\nSt. Clair County in west central Missouri...\n\n* Until 215 AM CST.\n\n* At 135 AM CST, severe thunderstorms were located along a line\nextending from 6 miles southeast of Schell City to 12 miles south\nof El Dorado Springs, moving northeast at 60 mph.\n\nHAZARD...60 mph wind gusts.\n\nSOURCE...Radar indicated.\n\nIMPACT...Expect damage to roofs, siding, and trees.\n\n* Locations impacted include...\nTruman Lake, El Dorado Springs, Osceola, Lowry City, Collins,\nRoscoe, Vista, Gerster, Olympia, Caplinger Mills, Harper, Iconium,\nTiffin, Taberville, Filley, Cedar Springs and Monegaw Springs.",
+        "instruction": "For your protection move to an interior room on the lowest floor of a\nbuilding.",
+        "response": "Shelter",
+        "parameters": {
+            "AWIPSidentifier": [
+                "SVRSGF"
+            ],
+            "WMOidentifier": [
+                "WUUS53 KSGF 270736"
+            ],
+            "eventMotionDescription": [
+                "2023-02-27T07:35:00-00:00...storm...220DEG...52KT...37.96,-94.03 37.69,-94.04"
+            ],
+            "windThreat": [
+                "RADAR INDICATED"
+            ],
+            "maxWindGust": [
+                "60 MPH"
+            ],
+            "hailThreat": [
+                "RADAR INDICATED"
+            ],
+            "maxHailSize": [
+                "Up to .75"
+            ],
+            "tornadoDetection": [
+                "POSSIBLE"
+            ],
+            "BLOCKCHANNEL": [
+                "EAS",
+                "NWEM",
+                "CMAS"
+            ],
+            "EAS-ORG": [
+                "WXR"
+            ],
+            "VTEC": [
+                "/O.NEW.KSGF.SV.W.0012.230227T0736Z-230227T0815Z/"
+            ],
+            "eventEndingTime": [
+                "2023-02-27T08:15:00+00:00"
+            ]
+        }
+    }
+}

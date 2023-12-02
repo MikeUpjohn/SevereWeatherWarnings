@@ -16,9 +16,9 @@ function createMap(latitude, longitude, zoom) {
 }
 
 function addDataSourceToMap(dataItem) {
-    mapSources.push(dataItem.id);
+    mapSources.push(dataItem.friendlyId);
     console.log(dataItem);
-    map.addSource(dataItem.id, {
+    map.addSource(dataItem.friendlyId, {
         'type': 'geojson',
         'data': {
             'type': 'Feature',
@@ -39,13 +39,14 @@ function addDataSourceToMap(dataItem) {
         }
     });
 
-    map.on('click', dataItem.id, (e) => {
+    map.on('click', dataItem.friendlyId, (e) => {
         var mapSourceProperties = e.features[0].properties;
 
         $('#warning-title').html(mapSourceProperties.event);
         $('#headline').html(mapSourceProperties.headline);
         $('#expiryDate').html(mapSourceProperties.expiryDate);
         $('#areaDescription').html(mapSourceProperties.areaDescription);
+        $('#more-information-link').attr('data-id', dataItem.friendlyId).attr('href', 'Warning?id=' + dataItem.friendlyId);
 
         new mapboxgl.Popup({ closeButton: false, maxWidth: '400px' })
             .setLngLat(e.lngLat)

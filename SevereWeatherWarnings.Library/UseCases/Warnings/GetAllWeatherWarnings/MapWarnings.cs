@@ -1,14 +1,13 @@
 ﻿using Newtonsoft.Json;
 using SevereWeatherWarnings.Library.Extensions;
-using SevereWeatherWarnings.Library.UseCases.Warnings.Interfaces;
-using SevereWeatherWarnings.Models;
+using SevereWeatherWarnings.Library.UseCases.Warnings.GetAllWeatherWarnings.Interfaces;
 using SevereWeatherWarnings.Models.API;
 
-namespace SevereWeatherWarnings.Library.UseCases.Warnings
+namespace SevereWeatherWarnings.Library.UseCases.Warnings.GetAllWeatherWarnings
 {
     public class MapWarnings : IMapWarnings
     {
-        public WeatherWarningsResponse Map(RetrieveDataRequest request, string rawData)
+        public WeatherWarningsResponse Map(string rawData)
         {
             try
             {
@@ -23,10 +22,9 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
                 }
 
                 return mappedWarnings ?? new WeatherWarningsResponse();
-            }
-            catch(Exception)
+            } catch (Exception)
             {
-                throw new Exception($"Error during mapping warning data.");
+                throw new Exception("Error during mapping warning data.");
             }
         }
     }

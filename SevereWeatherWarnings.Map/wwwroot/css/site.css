@@ -13,13 +13,27 @@
     src: url("../fonts/YouTubeSansRegular.otf");
 }
 
+@font-face {
+    font-family: "OpenSans";
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "OpenSansBold";
+    src: url("../fonts/OpenSans-Bold.ttf");
+}
+
 html {
     font-size: 14px;
 }
 
-body {
+body.main-map {
     overflow-y: hidden;
 }
+
+/*body.warning-detail {
+    overflow-y:hidden;
+}*/
 
 @media (min-width: 768px) {
     html {
@@ -127,8 +141,19 @@ html {
 
 .warning-popup p {
     font-family: YouTubeSansRegular;
-    font-size:1.2em;
+    font-size: 1.2em;
 }
+
+.warning-popup .more-information-link {
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+    .warning-popup .more-information-link:hover {
+        text-decoration: underline;
+    }
 
 .warning-count-panel {
     position: absolute;
@@ -137,18 +162,124 @@ html {
     width: 175px;
     height: 45px;
     border-radius: 7px;
-
-    background-color: #FFFFFF ;
+    background-color: #FFFFFF;
     box-shadow: 5px 5px 20px #000000;
-    opacity:0.65;
-
-    padding:10px;
+    opacity: 0.65;
+    padding: 10px;
 }
 
-.warning-count-panel p {
-   colour:#000000;
-}
+    .warning-count-panel p {
+        color: #000000;
+    }
 
     .warning-count-panel .warning-count {
-        float:right;
+        float: right;
     }
+
+.warning-detail {
+    font-family: OpenSans;
+    overflow-y: hidden;
+}
+
+.warning-details {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom:15px;
+}
+
+.warning-details .warning-detail-content {
+    display:block;
+}
+
+.warning-details > * {
+    padding-left: 15px;
+}
+
+.warning-details h1 {
+    font-family: OpenSansBold;
+    padding: 7px 2px 10px 37px;
+    margin-left: -24px;
+}
+
+.warning-details h2 {
+    font-family: OpenSansBold;
+    font-size: 1.25em;
+    padding-left: 15px;
+}
+
+.warning-details h3 {
+    font-size:1.0em;
+    font-weight:bold;
+}
+
+.warning-details .main-description {
+    font-size: 0.8em;
+    line-height: 17px;
+}
+
+.additional-properties {
+    font-size:0.9em;
+}
+
+.additional-properties label, .additional-properties span {
+    padding:5px;
+    display:inline-block;
+}
+
+.additional-properties span {
+    font-weight:bold;
+}
+
+    .additional-properties span.standard-label {
+        width: 200px;
+    }
+
+    .additional-properties span.standard-label-value {
+        width: 225px;
+        border-radius:4px;
+        font-weight:normal;
+    }
+
+    .additional-properties span.container-label {
+        width: 500px;
+        display: block;
+        padding: 2px;
+    }
+
+    .hail-size-1 {
+        background-color: lawngreen;
+    }
+
+.hail-size-2 {
+    background-color: greenyellow;
+}
+
+.hail-size-3 {
+    background-color: yellow;
+}
+
+.hail-size-4 {
+    background-color: orange;
+}
+
+.hail-size-5 {
+    background-color: orangered;
+}
+
+.hail-size-6 {
+    background-color: red;
+}
+
+.hail-size-6 {
+    background-color: deeppink;
+}
+
+.hail-size-7 {
+    background-color: purple;
+    color:#FFFFFF;
+}
+
+#warning-detail-panel {
+    overflow-y:hidden;
+
+}

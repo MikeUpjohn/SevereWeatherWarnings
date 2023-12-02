@@ -5,5 +5,9 @@
         <br />
         <p class="areaDescription" id="areaDescription">Cedar Rapid, IA</p>
         <p><b>Expires: </b><span class="expiryDate" id="expiryDate">2023-04-27 11:30 CDT</span></p>
+        @if (bool.Parse(ViewData["IsWarningDetailPageOn"].ToString()) == true)
+        {
+            <a href="" id="more-information-link" class="more-information-link" target="_blank" data-id="">More Details</a>
+        }
     </div>
 </div>

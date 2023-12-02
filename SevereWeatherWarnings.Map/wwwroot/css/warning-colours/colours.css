@@ -1,0 +1,111 @@
+﻿:root {
+  --green: #66FF66;
+  --orange: #FF8000;
+  --orange-red: #FF4800;
+  --pink: #F50581;
+  --purple: #8400FF;
+  --red: #FF0000;
+  --yellow: #FFD800;
+  --yelloworange: #FFD000;
+}
+/* Wind Threat Labels */
+.wind-threat-1 {
+  background-color: var(--yellow);
+}
+.wind-threat-2 {
+  background-color: var(--red);
+}
+/* Max Wind Gust */
+.max-wind-gust-1 {
+  background-color: var(--green);
+}
+.max-wind-gust-2 {
+  background-color: var(--yellow);
+}
+.max-wind-gust-3 {
+  background-color: var(--orange);
+}
+.max-wind-gust-4 {
+  background-color: var(--orange-red);
+}
+.max-wind-gust-5 {
+  background-color: var(--red);
+}
+.max-wind-gust-6 {
+  background-color: var(--pink);
+}
+.max-wind-gust-7 {
+  background-color: var(--purple);
+  color: var(--bs-white);
+}
+/* Hail Threat */
+.hail-threat-1 {
+  background-color: var(--yellow);
+}
+.hail-threat-2 {
+  background-color: var(--orange-red);
+}
+/* Thunderstorm Damage */
+.thunderstorm-damage-1 {
+  background-color: var(--orange);
+}
+.thunderstorm-damage-2 {
+  background-color: var(--red);
+}
+/* Max Hail Size */
+.max-hail-size-1 {
+  background-color: var(--green);
+}
+.max-hail-size-2 {
+  background-color: var(--yellow);
+}
+.max-hail-size-3 {
+  background-color: var(--yelloworange);
+}
+.max-hail-size-4 {
+  background-color: var(--orange);
+}
+.max-hail-size-5 {
+  background-color: var(--orange-red);
+}
+.max-hail-size-6 {
+  background-color: var(--red);
+}
+.max-hail-size-7 {
+  background-color: var(--pink);
+}
+.max-hail-size-8 {
+  background-color: var(--purple);
+}
+/* Tornado Detection */
+.tornado-detection-1,
+.tornado-detection-3 {
+  background-color: var(--orange-red);
+}
+.tornado-detection-2 {
+  background-color: var(--red);
+}
+/* Tornado Damage Threat */
+.tornado-damage-threat-1 {
+  background-color: var(--red);
+}
+.tornado-damage-threat-2 {
+  background-color: var(--pink);
+}
+/* Flash Flood Detection */
+.flash-flood-detection-1 {
+  background-color: var(--yellow);
+}
+.flash-flood-detection-2 {
+  background-color: var(--orange);
+}
+.flash-flood-detection-3 {
+  background-color: var(--red);
+}
+/* Flash Flood Damage Threat */
+.flash-flood-damage-threat-1 {
+  background-color: var(--orange);
+}
+.flash-flood-damage-threat-2 {
+  background-color: var(--red);
+}

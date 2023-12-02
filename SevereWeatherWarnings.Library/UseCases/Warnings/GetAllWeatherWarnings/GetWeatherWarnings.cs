@@ -1,11 +1,10 @@
-﻿using Newtonsoft.Json;
-using SevereWeatherWarnings.Library.Extensions;
-using SevereWeatherWarnings.Library.UseCases.Warnings.Interfaces;
+﻿using SevereWeatherWarnings.Library.Extensions;
+using SevereWeatherWarnings.Library.UseCases.Warnings.GetAllWeatherWarnings.Interfaces;
 using SevereWeatherWarnings.Library.Utilities.Interfaces;
 using SevereWeatherWarnings.Models;
 using SevereWeatherWarnings.Models.API;
 
-namespace SevereWeatherWarnings.Library.UseCases.Warnings
+namespace SevereWeatherWarnings.Library.UseCases.Warnings.GetAllWeatherWarnings
 {
     public class GetWeatherWarnings : IGetWeatherWarnings
     {
@@ -18,11 +17,11 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings
             _webServiceRetriever = webServiceRetriever;
         }
 
-        public async Task<WeatherWarningsResponse> GetActiveWeatherWarnings(RetrieveDataRequest request)
+        public async Task<WeatherWarningsResponse> GetAllActiveWarnings(RetrieveDataRequest request)
         {
             var apiUrl = GenerateAPIUrl(request);
             var response = await _webServiceRetriever.GetData(apiUrl);
-            var mappedResponse = _mapWarnings.Map(request, response);
+            var mappedResponse = _mapWarnings.Map(response);
 
             return mappedResponse;
         }
