@@ -118,7 +118,8 @@ function mapNewData(data) {
     });
 }
 
-const twcApiKey = '9273f14c853b4634b3f14c853bd634ab';
+// old key 9273f14c853b4634b3f14c853bd634ab
+const twcApiKey = '2ec2232d72f1484282232d72f198421d';
 
 const timeSlices = fetch('https://api.weather.com/v3/TileServer/series/productSet/PPAcore?apiKey=' +
     twcApiKey);
