@@ -29,7 +29,7 @@ namespace SevereWeatherWarnings.Library.UseCases.Warnings.GetSingleWarning
         {
             if(!request.IsInTestMode)
             {
-                return "https://api.weather.gov/alerts/" + request.Id;
+                return "https://api.weather.gov/alerts/urn:oid:" + request.Id;
             }
 
             return $"https://severeweathermap.confessions-of-a-storm-geek.co.uk/sample-alerts/{request.Id}.json";
