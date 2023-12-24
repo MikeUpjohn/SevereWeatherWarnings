@@ -1,4 +1,5 @@
 ﻿@using SevereWeatherWarnings.Library.Helpers
+@using SevereWeatherWarnings.Library.Extensions
 
 @model SevereWeatherWarnings.Models.Display.WeatherWarningDetailsViewModel;
 <div class="row g-0">
@@ -18,13 +19,13 @@
             <br />
             <div class="warning-detail-content">
                 <div class="row g-0">
-                    <p class="main-description">@Html.Raw(Model.WarningProperties.Description.Replace("\n", "<br />"))</p>
+                    <p class="main-description">@Html.Raw(Model.WarningProperties.Description.ToHtmlTrimmedString())</p>
                 </div>
                 <div class="row g-0">
-                    <p class="main-description">@Html.Raw(Model.WarningProperties.Instruction.Replace("\n", "<br />"))</p>
+                    <p class="main-description">@Html.Raw(Model.WarningProperties.Instruction.ToHtmlTrimmedString())</p>
                 </div>
                 <div class="row g-0">
-                    <p class="main-description">@Html.Raw(Model.WarningProperties.Instruction.Replace("\n", "<br />"))</p>
+                    <p class="main-description">@Html.Raw(Model.WarningProperties.Instruction.ToHtmlTrimmedString())</p>
                 </div>
                 <br />
                 <h3>More Details</h3>
